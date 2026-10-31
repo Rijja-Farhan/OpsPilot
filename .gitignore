@@ -1,0 +1,28 @@
+# Environments and secrets
+.venv/
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# Generated / downloaded data (regenerate with tools/gen)
+data/raw/
+data/processed/
+*.sqlite
+*.db
+
+# Models and traces
+ml/artifacts/
+traces/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
