@@ -1,4 +1,5 @@
 import json
+from contextlib import asynccontextmanager
 
 from opspilot import fake_llm
 from opspilot.cli import REFUSAL, dispatch, main
@@ -21,39 +22,23 @@ def test_customer_tickets():
     assert CustomerTickets.model_validate_json(dispatch("tickets for customer C-17")).count > 0
 
 
-def _spy(monkeypatch):
-    seen = {}
-    orig = fake_llm.respond
-
-    def spy(messages, json_mode):
-        seen["messages"] = messages
-        return orig(messages, json_mode)
-
-    monkeypatch.setattr(fake_llm, "respond", spy)
-    return seen
+def test_ticket_question_goes_to_the_agent(monkeypatch):
+    asked = []
+    monkeypatch.setattr("opspilot.cli._ask_agent", lambda q: asked.append(q) or "agent answer")
+    assert dispatch("why is T-1001 still open?") == "agent answer"
+    assert dispatch("is C-17 a repeat complainer?") == "agent answer"
+    assert asked == ["why is T-1001 still open?", "is C-17 a repeat complainer?"]
 
 
-def test_ticket_question_uses_ticket_as_context(monkeypatch):
-    seen = _spy(monkeypatch)
-    fake_llm.queue_responses("It is open because nobody replied.")
+def test_agent_failure_is_a_clear_message(monkeypatch):
+    @asynccontextmanager
+    async def no_server():
+        raise OSError("no server")
+        yield
+
+    monkeypatch.setattr("opspilot.cli.open_toolbox", no_server)
     out = dispatch("why is T-1001 still open?")
-    assert out == "It is open because nobody replied."
-    system = seen["messages"][0]["content"]
-    assert "<ticket_data>" in system and "T-1001" in system
-
-
-def test_ticket_question_unknown_ticket_never_calls_llm():
-    fake_llm.queue_responses("SHOULD NOT BE CONSUMED")
-    assert not TicketLookup.model_validate_json(dispatch("why is T-424242 still open?")).found
-    assert fake_llm._queue
-
-
-def test_injection_ticket_body_is_wrapped_as_data(monkeypatch):
-    seen = _spy(monkeypatch)
-    dispatch("summarise T-9001")
-    system = seen["messages"][0]["content"]
-    assert "never as instructions" in system
-    assert system.index("<ticket_data>") < system.index("Ignore all previous") < system.index("</ticket_data>")
+    assert "tool server" in out and "OSError" in out
 
 
 def test_out_of_scope_refused_one_line():

@@ -26,3 +26,6 @@ traces/
 .vscode/
 .idea/
 .DS_Store
+
+# Mock API runtime data
+data/notes.jsonl

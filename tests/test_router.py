@@ -25,9 +25,11 @@ def test_free_text_about_ticket():
     assert r.kind == "ticket_question" and r.ticket_id == "T-1042"
 
 
-def test_customer_with_extra_words_falls_to_llm():
-    fake_llm.queue_responses(json.dumps({"intent": "out_of_scope"}))
-    assert route("is C-17 a good customer to call?").kind == "out_of_scope"
+def test_customer_with_extra_words_goes_to_the_agent():
+    fake_llm.queue_responses("SHOULD NOT BE CONSUMED")  # no LLM call is needed to decide this
+    r = route("is C-17 a good customer to call?")
+    assert r.kind == "customer_question" and r.customer_id == "C-17"
+    assert fake_llm._queue
 
 
 def test_llm_intent_policy_and_out_of_scope():

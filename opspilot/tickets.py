@@ -17,6 +17,10 @@ def _store(path: Path | None) -> dict[str, Ticket]:
     return _load(path or TICKETS_PATH)
 
 
+def all_tickets(path: Path | None = None) -> list[Ticket]:
+    return list(_store(path).values())
+
+
 def _lookup(t: Ticket) -> TicketLookup:
     return TicketLookup(found=True, **t.model_dump(exclude={"body", "assignee"}))
 

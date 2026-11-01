@@ -25,8 +25,16 @@ class LLMError:
 
 
 @dataclass
+class ToolCall:
+    id: str
+    name: str
+    arguments: str  # raw JSON string exactly as the model produced it; callers must validate before use
+
+
+@dataclass
 class LLMResult:
     text: str = ""
+    tool_calls: list[ToolCall] = field(default_factory=list)
     parsed: BaseModel | None = None
     error: LLMError | None = None
     prompt_tokens: int = 0
@@ -41,6 +49,15 @@ class LLMResult:
     def ok(self) -> bool:
         return self.error is None
 
+    @property
+    def assistant_message(self) -> dict:
+        """This turn as a chat message, ready to append to the history before the tool results."""
+        msg: dict = {"role": "assistant", "content": self.text or None}
+        if self.tool_calls:
+            msg["tool_calls"] = [{"id": c.id, "type": "function", "function": {"name": c.name, "arguments": c.arguments}}
+                                 for c in self.tool_calls]
+        return msg
+
 
 def _trace_path() -> Path:
     return Path(os.environ.get("OPSPILOT_TRACE_PATH") or ROOT / "traces" / "llm_calls.jsonl")
@@ -53,6 +70,7 @@ def _log(result: LLMResult, schema) -> None:
         "error": result.error.code if result.error else None,
         "prompt_tokens": result.prompt_tokens, "completion_tokens": result.completion_tokens,
         "latency_ms": round(result.latency_ms, 1), "attempts": result.attempts,
+        "tool_calls": [c.name for c in result.tool_calls],
     }
     result.trace = record
     try:
@@ -75,14 +93,19 @@ class _FakeClient:
         self.chat = self
         self.completions = self
 
-    def create(self, *, messages, response_format=None, **_):
-        return fake_llm.respond(messages, json_mode=response_format is not None)
+    def create(self, *, messages, response_format=None, tools=None, **_):
+        extra = {"tools": tools} if tools else {}
+        return fake_llm.respond(messages, json_mode=response_format is not None, **extra)
 
 
-def _call(client, settings: Settings, messages: list[dict], json_mode: bool, result: LLMResult) -> str | LLMError:
+def _call(client, settings: Settings, messages: list[dict], json_mode: bool, result: LLMResult,
+          tools: list[dict] | None = None):
+    """Return the provider's message object, or an LLMError."""
     kwargs = {"model": settings.model, "messages": messages, "temperature": 0}
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
+    if tools:
+        kwargs["tools"] = tools
     for attempt in range(MAX_429_RETRIES + 1):
         try:
             resp = client.chat.completions.create(**kwargs)
@@ -96,13 +119,17 @@ def _call(client, settings: Settings, messages: list[dict], json_mode: bool, res
         usage = getattr(resp, "usage", None)
         result.prompt_tokens += getattr(usage, "prompt_tokens", 0) or 0
         result.completion_tokens += getattr(usage, "completion_tokens", 0) or 0
-        return resp.choices[0].message.content or ""
+        return resp.choices[0].message
     return LLMError("rate_limited", "exhausted retries")  # unreachable
 
 
-def complete(messages: list[dict], *, schema: type[T] | None = None,
+def complete(messages: list[dict], *, schema: type[T] | None = None, tools: list[dict] | None = None,
              settings: Settings | None = None, client=None) -> LLMResult:
-    """Return text, or (with schema) a Pydantic-validated object. Never raises for provider/format failures."""
+    """Return text, or (with schema) a Pydantic-validated object, or (with tools) text and/or tool calls.
+    Never raises for provider/format failures. `tools` uses the OpenAI function-tool format; schema and tools
+    cannot be combined."""
+    if schema and tools:
+        raise ValueError("complete() takes either schema or tools, not both")
     settings = settings or load_settings()
     result = LLMResult(provider=settings.provider, model=settings.model)
     start = time.perf_counter()
@@ -124,11 +151,14 @@ def complete(messages: list[dict], *, schema: type[T] | None = None,
 
         for attempt in (1, 2):  # one retry on invalid output, with the error fed back
             result.attempts = attempt
-            out = _call(client, settings, msgs, json_mode=schema is not None, result=result)
-            if isinstance(out, LLMError):
-                result.error = out
+            msg = _call(client, settings, msgs, json_mode=schema is not None, result=result, tools=tools)
+            if isinstance(msg, LLMError):
+                result.error = msg
                 return result
+            out = msg.content or ""
             result.text = out
+            result.tool_calls = [ToolCall(c.id, c.function.name, c.function.arguments or "{}")
+                                 for c in getattr(msg, "tool_calls", None) or []]
             if schema is None:
                 return result
             try:

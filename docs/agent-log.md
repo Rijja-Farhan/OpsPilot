@@ -23,3 +23,15 @@ Live Groq run done on 2026-11-01 (14/15, see `docs/a1-eval.md`). Only Groq was t
 |---|---|---|---|
 | `policies.wants_history` | Substring matching: "before", "past", `"old "` and `"change "` (inside "exchange ") flagged ordinary questions as history, pulling superseded v1 docs into answers and breaking criterion 3. My 15-question eval had no question containing those words, so it missed it | External review, then reproduced by running it | Whole-word regex, tighter word list, regression tests |
 | Dependencies | Packages were only in a README pip line | External review | `requirements.txt` |
+
+## A3 build (2026-11-01)
+| Where | What went wrong | How it was caught | Fix |
+|---|---|---|---|
+| `mcp_server` | I wrote against the MCP v1 API (`FastMCP`), but the installed SDK is 2.x where it was renamed `MCPServer` and the client changed | Read the installed package first; `mcp/server/fastmcp.py` only raises a migration error | Probed the 2.x API in a scratch script before writing the server |
+| `llm.py` tool support | Adding a `tools` kwarg to the fake client call broke two A1 CLI tests, whose spy replaced `fake_llm.respond` with a fixed signature | pytest (2 failures, `TypeError`) | Pass `tools` only when set, so the old call shape is unchanged |
+| `tests/test_mcp_server.py` | My error-shape helper asserted "http" never appears in an error message, but "upstream returned HTTP 500" is a legitimate message; the check was wrong, not the server | Two failing tests, read the message | Assert on `://`, `<` and `Traceback` (raw bodies and traces) instead |
+| `tests/test_cli.py` | First draft of the agent-failure test patched `asyncio.run` with a lambda that closes the coroutine; hard to explain | Re-read it before committing | Patch `open_toolbox` with a small async context manager that raises |
+| `search_tickets` misuse | Model sent `category: "fraud"` in 3 of 3 live runs. A description fix did nothing; a JSON-schema enum made Groq reject the call with HTTP 400 (provider-side validation), so I reverted it | Live run, read the tool-call log, then re-ran each variant 3 times | Server accepts an unambiguous fragment and reports `filters_normalized` (see decisions) |
+| Live answer quality | "why is T-1002 still open?" claimed "no action has been taken" from a null assignee; the data does not say that | Read the answer against the ticket | Open: not a tool problem; the prompt could say "state only what the tool results show" |
+| Live latency | Triage question took 22 to 44 s on Groq (`gpt-oss-120b` reasons before each tool call) | Timings in `evals/run_a3.py` output | Open: consider a smaller model for tool turns |
+| Test data | Live runs wrote a note to `data/notes.jsonl` (the real write path) | `ls data/` after the run | File is gitignored and deleted after runs; tests use a temp path |

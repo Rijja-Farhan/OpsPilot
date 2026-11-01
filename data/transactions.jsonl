@@ -1,0 +1,532 @@
+{"txn_id": "X-00006", "customer_id": "C-1", "amount": 265.99, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-12", "status": "settled"}
+{"txn_id": "X-00004", "customer_id": "C-1", "amount": 13.89, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-01", "status": "reversed"}
+{"txn_id": "X-00007", "customer_id": "C-1", "amount": 341.95, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-03", "status": "settled"}
+{"txn_id": "X-00001", "customer_id": "C-1", "amount": 64.51, "currency": "USD", "merchant": "City Transit", "date": "2026-08-06", "status": "pending"}
+{"txn_id": "X-00003", "customer_id": "C-1", "amount": 43.98, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-28", "status": "declined"}
+{"txn_id": "X-00005", "customer_id": "C-1", "amount": 316.19, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-03", "status": "settled"}
+{"txn_id": "X-00002", "customer_id": "C-1", "amount": 40.95, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-27", "status": "settled"}
+{"txn_id": "X-00066", "customer_id": "C-10", "amount": 263.71, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-06", "status": "pending"}
+{"txn_id": "X-00062", "customer_id": "C-10", "amount": 314.07, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-23", "status": "pending"}
+{"txn_id": "X-00068", "customer_id": "C-10", "amount": 32.7, "currency": "USD", "merchant": "City Transit", "date": "2026-08-06", "status": "settled"}
+{"txn_id": "X-00064", "customer_id": "C-10", "amount": 134.93, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-18", "status": "pending"}
+{"txn_id": "X-00071", "customer_id": "C-10", "amount": 296.5, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-26", "status": "settled"}
+{"txn_id": "X-00069", "customer_id": "C-10", "amount": 182.89, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-30", "status": "declined"}
+{"txn_id": "X-00063", "customer_id": "C-10", "amount": 298.52, "currency": "USD", "merchant": "TechMart", "date": "2026-10-12", "status": "settled"}
+{"txn_id": "X-00067", "customer_id": "C-10", "amount": 72.53, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-21", "status": "settled"}
+{"txn_id": "X-00070", "customer_id": "C-10", "amount": 268.34, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-21", "status": "settled"}
+{"txn_id": "X-00065", "customer_id": "C-10", "amount": 29.31, "currency": "USD", "merchant": "BookNook", "date": "2026-10-24", "status": "settled"}
+{"txn_id": "X-00081", "customer_id": "C-11", "amount": 419.43, "currency": "USD", "merchant": "City Transit", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00073", "customer_id": "C-11", "amount": 143.65, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-04", "status": "settled"}
+{"txn_id": "X-00076", "customer_id": "C-11", "amount": 61.34, "currency": "USD", "merchant": "BookNook", "date": "2026-07-11", "status": "settled"}
+{"txn_id": "X-00078", "customer_id": "C-11", "amount": 198.31, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-02", "status": "settled"}
+{"txn_id": "X-00079", "customer_id": "C-11", "amount": 276.03, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-09", "status": "pending"}
+{"txn_id": "X-00074", "customer_id": "C-11", "amount": 6.17, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-20", "status": "settled"}
+{"txn_id": "X-00080", "customer_id": "C-11", "amount": 5.5, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-22", "status": "settled"}
+{"txn_id": "X-00075", "customer_id": "C-11", "amount": 34.82, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-28", "status": "settled"}
+{"txn_id": "X-00072", "customer_id": "C-11", "amount": 60.63, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-23", "status": "settled"}
+{"txn_id": "X-00077", "customer_id": "C-11", "amount": 395.91, "currency": "USD", "merchant": "BookNook", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00084", "customer_id": "C-12", "amount": 228.42, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-08", "status": "settled"}
+{"txn_id": "X-00089", "customer_id": "C-12", "amount": 52.12, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-08", "status": "settled"}
+{"txn_id": "X-00083", "customer_id": "C-12", "amount": 93.21, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-14", "status": "settled"}
+{"txn_id": "X-00085", "customer_id": "C-12", "amount": 43.35, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-17", "status": "settled"}
+{"txn_id": "X-00086", "customer_id": "C-12", "amount": 21.75, "currency": "USD", "merchant": "BookNook", "date": "2026-07-25", "status": "settled"}
+{"txn_id": "X-00082", "customer_id": "C-12", "amount": 128.23, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-01", "status": "settled"}
+{"txn_id": "X-00088", "customer_id": "C-12", "amount": 249.15, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-21", "status": "settled"}
+{"txn_id": "X-00087", "customer_id": "C-12", "amount": 287.43, "currency": "USD", "merchant": "PetWorld", "date": "2026-10-11", "status": "settled"}
+{"txn_id": "X-00091", "customer_id": "C-13", "amount": 404.74, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-13", "status": "settled"}
+{"txn_id": "X-00095", "customer_id": "C-13", "amount": 416.74, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-13", "status": "settled"}
+{"txn_id": "X-00093", "customer_id": "C-13", "amount": 300.79, "currency": "USD", "merchant": "BookNook", "date": "2026-07-24", "status": "pending"}
+{"txn_id": "X-00092", "customer_id": "C-13", "amount": 404.72, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-05", "status": "settled"}
+{"txn_id": "X-00094", "customer_id": "C-13", "amount": 398.09, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-13", "status": "settled"}
+{"txn_id": "X-00090", "customer_id": "C-13", "amount": 194.54, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-09-22", "status": "settled"}
+{"txn_id": "X-00099", "customer_id": "C-14", "amount": 101.65, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-06", "status": "settled"}
+{"txn_id": "X-00098", "customer_id": "C-14", "amount": 173.38, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-14", "status": "settled"}
+{"txn_id": "X-00100", "customer_id": "C-14", "amount": 158.65, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-22", "status": "settled"}
+{"txn_id": "X-00096", "customer_id": "C-14", "amount": 361.4, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-29", "status": "settled"}
+{"txn_id": "X-00097", "customer_id": "C-14", "amount": 121.53, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-03", "status": "settled"}
+{"txn_id": "X-00103", "customer_id": "C-14", "amount": 159.31, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-10", "status": "reversed"}
+{"txn_id": "X-00104", "customer_id": "C-14", "amount": 441.56, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-19", "status": "settled"}
+{"txn_id": "X-00101", "customer_id": "C-14", "amount": 101.87, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-07", "status": "settled"}
+{"txn_id": "X-00105", "customer_id": "C-14", "amount": 53.67, "currency": "USD", "merchant": "PetWorld", "date": "2026-10-09", "status": "declined"}
+{"txn_id": "X-00102", "customer_id": "C-14", "amount": 149.06, "currency": "USD", "merchant": "Gym Central", "date": "2026-10-23", "status": "settled"}
+{"txn_id": "X-00113", "customer_id": "C-15", "amount": 381.91, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-08", "status": "settled"}
+{"txn_id": "X-00110", "customer_id": "C-15", "amount": 324.3, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-29", "status": "reversed"}
+{"txn_id": "X-00108", "customer_id": "C-15", "amount": 87.16, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-02", "status": "settled"}
+{"txn_id": "X-00109", "customer_id": "C-15", "amount": 2.76, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-24", "status": "reversed"}
+{"txn_id": "X-00106", "customer_id": "C-15", "amount": 328.39, "currency": "USD", "merchant": "BookNook", "date": "2026-09-06", "status": "declined"}
+{"txn_id": "X-00114", "customer_id": "C-15", "amount": 229.19, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-09", "status": "settled"}
+{"txn_id": "X-00107", "customer_id": "C-15", "amount": 442.94, "currency": "USD", "merchant": "City Transit", "date": "2026-09-12", "status": "declined"}
+{"txn_id": "X-00112", "customer_id": "C-15", "amount": 414.51, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-21", "status": "reversed"}
+{"txn_id": "X-00111", "customer_id": "C-15", "amount": 90.27, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-23", "status": "reversed"}
+{"txn_id": "X-00123", "customer_id": "C-16", "amount": 303.41, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-20", "status": "settled"}
+{"txn_id": "X-00120", "customer_id": "C-16", "amount": 97.74, "currency": "USD", "merchant": "TechMart", "date": "2026-07-22", "status": "settled"}
+{"txn_id": "X-00115", "customer_id": "C-16", "amount": 423.28, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-28", "status": "settled"}
+{"txn_id": "X-00128", "customer_id": "C-16", "amount": 111.31, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-04", "status": "settled"}
+{"txn_id": "X-00118", "customer_id": "C-16", "amount": 194.59, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-15", "status": "reversed"}
+{"txn_id": "X-00126", "customer_id": "C-16", "amount": 187.67, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-19", "status": "settled"}
+{"txn_id": "X-00121", "customer_id": "C-16", "amount": 297.17, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-27", "status": "reversed"}
+{"txn_id": "X-00127", "customer_id": "C-16", "amount": 323.82, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-29", "status": "settled"}
+{"txn_id": "X-00119", "customer_id": "C-16", "amount": 146.37, "currency": "USD", "merchant": "TechMart", "date": "2026-09-05", "status": "reversed"}
+{"txn_id": "X-00116", "customer_id": "C-16", "amount": 277.75, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-10", "status": "pending"}
+{"txn_id": "X-00117", "customer_id": "C-16", "amount": 375.51, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00124", "customer_id": "C-16", "amount": 68.01, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-09-30", "status": "settled"}
+{"txn_id": "X-00122", "customer_id": "C-16", "amount": 285.56, "currency": "USD", "merchant": "BookNook", "date": "2026-10-20", "status": "settled"}
+{"txn_id": "X-00125", "customer_id": "C-16", "amount": 275.85, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-22", "status": "settled"}
+{"txn_id": "X-00129", "customer_id": "C-17", "amount": 24.5, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-06", "status": "settled"}
+{"txn_id": "X-00135", "customer_id": "C-17", "amount": 338.8, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-11", "status": "settled"}
+{"txn_id": "X-00132", "customer_id": "C-17", "amount": 427.62, "currency": "USD", "merchant": "TechMart", "date": "2026-08-14", "status": "pending"}
+{"txn_id": "X-00131", "customer_id": "C-17", "amount": 239.95, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-16", "status": "settled"}
+{"txn_id": "X-00136", "customer_id": "C-17", "amount": 345.08, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-30", "status": "reversed"}
+{"txn_id": "X-00130", "customer_id": "C-17", "amount": 206.49, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-02", "status": "reversed"}
+{"txn_id": "X-00133", "customer_id": "C-17", "amount": 193.18, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-04", "status": "settled"}
+{"txn_id": "X-00134", "customer_id": "C-17", "amount": 335.16, "currency": "USD", "merchant": "TechMart", "date": "2026-09-04", "status": "settled"}
+{"txn_id": "X-00138", "customer_id": "C-17", "amount": 107.05, "currency": "USD", "merchant": "BookNook", "date": "2026-09-21", "status": "pending"}
+{"txn_id": "X-00139", "customer_id": "C-17", "amount": 38.1, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-02", "status": "settled"}
+{"txn_id": "X-00137", "customer_id": "C-17", "amount": 109.18, "currency": "USD", "merchant": "TechMart", "date": "2026-10-22", "status": "settled"}
+{"txn_id": "X-00143", "customer_id": "C-18", "amount": 172.41, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00142", "customer_id": "C-18", "amount": 425.84, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-14", "status": "declined"}
+{"txn_id": "X-00144", "customer_id": "C-18", "amount": 135.78, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-14", "status": "settled"}
+{"txn_id": "X-00149", "customer_id": "C-18", "amount": 378.55, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-13", "status": "pending"}
+{"txn_id": "X-00145", "customer_id": "C-18", "amount": 243.12, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-23", "status": "declined"}
+{"txn_id": "X-00140", "customer_id": "C-18", "amount": 150.23, "currency": "USD", "merchant": "TechMart", "date": "2026-09-08", "status": "settled"}
+{"txn_id": "X-00148", "customer_id": "C-18", "amount": 301.66, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-10", "status": "settled"}
+{"txn_id": "X-00141", "customer_id": "C-18", "amount": 94.66, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-12", "status": "declined"}
+{"txn_id": "X-00147", "customer_id": "C-18", "amount": 197.25, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-09-12", "status": "settled"}
+{"txn_id": "X-00146", "customer_id": "C-18", "amount": 404.22, "currency": "USD", "merchant": "TechMart", "date": "2026-10-03", "status": "settled"}
+{"txn_id": "X-00155", "customer_id": "C-19", "amount": 293.26, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-09", "status": "settled"}
+{"txn_id": "X-00153", "customer_id": "C-19", "amount": 115.02, "currency": "USD", "merchant": "City Transit", "date": "2026-09-01", "status": "settled"}
+{"txn_id": "X-00151", "customer_id": "C-19", "amount": 171.84, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00154", "customer_id": "C-19", "amount": 337.56, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-09-17", "status": "settled"}
+{"txn_id": "X-00152", "customer_id": "C-19", "amount": 153.2, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-26", "status": "settled"}
+{"txn_id": "X-00150", "customer_id": "C-19", "amount": 390.35, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-25", "status": "settled"}
+{"txn_id": "X-00011", "customer_id": "C-2", "amount": 133.34, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-13", "status": "settled"}
+{"txn_id": "X-00008", "customer_id": "C-2", "amount": 43.55, "currency": "USD", "merchant": "City Transit", "date": "2026-09-16", "status": "settled"}
+{"txn_id": "X-00010", "customer_id": "C-2", "amount": 242.23, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-21", "status": "pending"}
+{"txn_id": "X-00012", "customer_id": "C-2", "amount": 260.65, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-23", "status": "settled"}
+{"txn_id": "X-00009", "customer_id": "C-2", "amount": 272.47, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00161", "customer_id": "C-20", "amount": 418.14, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-06", "status": "settled"}
+{"txn_id": "X-00156", "customer_id": "C-20", "amount": 108.87, "currency": "USD", "merchant": "TechMart", "date": "2026-08-07", "status": "settled"}
+{"txn_id": "X-00158", "customer_id": "C-20", "amount": 345.57, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-15", "status": "declined"}
+{"txn_id": "X-00160", "customer_id": "C-20", "amount": 434.19, "currency": "USD", "merchant": "City Transit", "date": "2026-08-18", "status": "settled"}
+{"txn_id": "X-00157", "customer_id": "C-20", "amount": 254.66, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-02", "status": "settled"}
+{"txn_id": "X-00159", "customer_id": "C-20", "amount": 433.75, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-17", "status": "settled"}
+{"txn_id": "X-00162", "customer_id": "C-21", "amount": 314.34, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-15", "status": "reversed"}
+{"txn_id": "X-00163", "customer_id": "C-21", "amount": 270.98, "currency": "USD", "merchant": "City Transit", "date": "2026-07-22", "status": "declined"}
+{"txn_id": "X-00164", "customer_id": "C-21", "amount": 352.62, "currency": "USD", "merchant": "BookNook", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00165", "customer_id": "C-21", "amount": 298.36, "currency": "USD", "merchant": "City Transit", "date": "2026-08-28", "status": "reversed"}
+{"txn_id": "X-00166", "customer_id": "C-21", "amount": 154.87, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-08", "status": "settled"}
+{"txn_id": "X-00174", "customer_id": "C-22", "amount": 220.42, "currency": "USD", "merchant": "BookNook", "date": "2026-07-21", "status": "settled"}
+{"txn_id": "X-00168", "customer_id": "C-22", "amount": 277.93, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-24", "status": "settled"}
+{"txn_id": "X-00169", "customer_id": "C-22", "amount": 210.26, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-30", "status": "declined"}
+{"txn_id": "X-00175", "customer_id": "C-22", "amount": 154.47, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-03", "status": "settled"}
+{"txn_id": "X-00167", "customer_id": "C-22", "amount": 80.91, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-09", "status": "settled"}
+{"txn_id": "X-00172", "customer_id": "C-22", "amount": 257.29, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-13", "status": "settled"}
+{"txn_id": "X-00173", "customer_id": "C-22", "amount": 14.86, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-20", "status": "settled"}
+{"txn_id": "X-00170", "customer_id": "C-22", "amount": 122.24, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-30", "status": "settled"}
+{"txn_id": "X-00171", "customer_id": "C-22", "amount": 126.96, "currency": "USD", "merchant": "TechMart", "date": "2026-09-30", "status": "settled"}
+{"txn_id": "X-00176", "customer_id": "C-22", "amount": 250.99, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-07", "status": "settled"}
+{"txn_id": "X-00186", "customer_id": "C-23", "amount": 128.78, "currency": "USD", "merchant": "City Transit", "date": "2026-07-17", "status": "settled"}
+{"txn_id": "X-00183", "customer_id": "C-23", "amount": 143.37, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00185", "customer_id": "C-23", "amount": 326.61, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-25", "status": "declined"}
+{"txn_id": "X-00184", "customer_id": "C-23", "amount": 87.81, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-31", "status": "settled"}
+{"txn_id": "X-00181", "customer_id": "C-23", "amount": 150.19, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00177", "customer_id": "C-23", "amount": 291.36, "currency": "USD", "merchant": "TechMart", "date": "2026-09-04", "status": "settled"}
+{"txn_id": "X-00180", "customer_id": "C-23", "amount": 249.96, "currency": "USD", "merchant": "BookNook", "date": "2026-09-07", "status": "pending"}
+{"txn_id": "X-00178", "customer_id": "C-23", "amount": 43.69, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-10", "status": "settled"}
+{"txn_id": "X-00179", "customer_id": "C-23", "amount": 139.18, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-14", "status": "settled"}
+{"txn_id": "X-00187", "customer_id": "C-23", "amount": 134.72, "currency": "USD", "merchant": "BookNook", "date": "2026-10-09", "status": "settled"}
+{"txn_id": "X-00182", "customer_id": "C-23", "amount": 139.37, "currency": "USD", "merchant": "StreamBox", "date": "2026-10-16", "status": "settled"}
+{"txn_id": "X-00188", "customer_id": "C-24", "amount": 249.9, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00189", "customer_id": "C-24", "amount": 287.77, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-30", "status": "settled"}
+{"txn_id": "X-00190", "customer_id": "C-24", "amount": 392.98, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00191", "customer_id": "C-24", "amount": 216.46, "currency": "USD", "merchant": "BookNook", "date": "2026-10-08", "status": "settled"}
+{"txn_id": "X-00197", "customer_id": "C-25", "amount": 409.01, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-13", "status": "declined"}
+{"txn_id": "X-00192", "customer_id": "C-25", "amount": 35.19, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-05", "status": "settled"}
+{"txn_id": "X-00200", "customer_id": "C-25", "amount": 282.23, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-08", "status": "settled"}
+{"txn_id": "X-00195", "customer_id": "C-25", "amount": 344.47, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-16", "status": "declined"}
+{"txn_id": "X-00193", "customer_id": "C-25", "amount": 69.97, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-20", "status": "settled"}
+{"txn_id": "X-00198", "customer_id": "C-25", "amount": 445.53, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-20", "status": "declined"}
+{"txn_id": "X-00201", "customer_id": "C-25", "amount": 72.36, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-22", "status": "settled"}
+{"txn_id": "X-00202", "customer_id": "C-25", "amount": 72.13, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-04", "status": "declined"}
+{"txn_id": "X-00196", "customer_id": "C-25", "amount": 103.11, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-13", "status": "settled"}
+{"txn_id": "X-00194", "customer_id": "C-25", "amount": 40.16, "currency": "USD", "merchant": "StreamBox", "date": "2026-10-16", "status": "pending"}
+{"txn_id": "X-00199", "customer_id": "C-25", "amount": 28.98, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-19", "status": "settled"}
+{"txn_id": "X-00205", "customer_id": "C-26", "amount": 266.23, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-04", "status": "settled"}
+{"txn_id": "X-00207", "customer_id": "C-26", "amount": 68.75, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-18", "status": "settled"}
+{"txn_id": "X-00208", "customer_id": "C-26", "amount": 33.99, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-22", "status": "settled"}
+{"txn_id": "X-00204", "customer_id": "C-26", "amount": 106.57, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-23", "status": "reversed"}
+{"txn_id": "X-00210", "customer_id": "C-26", "amount": 198.74, "currency": "USD", "merchant": "TechMart", "date": "2026-08-04", "status": "settled"}
+{"txn_id": "X-00209", "customer_id": "C-26", "amount": 268.58, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-20", "status": "settled"}
+{"txn_id": "X-00206", "customer_id": "C-26", "amount": 192.46, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-03", "status": "reversed"}
+{"txn_id": "X-00203", "customer_id": "C-26", "amount": 316.94, "currency": "USD", "merchant": "TechMart", "date": "2026-10-22", "status": "reversed"}
+{"txn_id": "X-00213", "customer_id": "C-27", "amount": 42.91, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-16", "status": "declined"}
+{"txn_id": "X-00221", "customer_id": "C-27", "amount": 131.12, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-19", "status": "pending"}
+{"txn_id": "X-00214", "customer_id": "C-27", "amount": 265.03, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-26", "status": "reversed"}
+{"txn_id": "X-00219", "customer_id": "C-27", "amount": 184.94, "currency": "USD", "merchant": "BookNook", "date": "2026-08-07", "status": "settled"}
+{"txn_id": "X-00218", "customer_id": "C-27", "amount": 366.78, "currency": "USD", "merchant": "City Transit", "date": "2026-09-01", "status": "settled"}
+{"txn_id": "X-00216", "customer_id": "C-27", "amount": 212.78, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-05", "status": "settled"}
+{"txn_id": "X-00217", "customer_id": "C-27", "amount": 83.31, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-06", "status": "reversed"}
+{"txn_id": "X-00220", "customer_id": "C-27", "amount": 386.26, "currency": "USD", "merchant": "BookNook", "date": "2026-09-09", "status": "settled"}
+{"txn_id": "X-00212", "customer_id": "C-27", "amount": 331.07, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-29", "status": "settled"}
+{"txn_id": "X-00211", "customer_id": "C-27", "amount": 198.12, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00215", "customer_id": "C-27", "amount": 370.0, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00223", "customer_id": "C-28", "amount": 371.57, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-08", "status": "pending"}
+{"txn_id": "X-00228", "customer_id": "C-28", "amount": 56.4, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-15", "status": "settled"}
+{"txn_id": "X-00229", "customer_id": "C-28", "amount": 319.98, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-22", "status": "settled"}
+{"txn_id": "X-00225", "customer_id": "C-28", "amount": 164.08, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-29", "status": "reversed"}
+{"txn_id": "X-00227", "customer_id": "C-28", "amount": 248.05, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-05", "status": "settled"}
+{"txn_id": "X-00222", "customer_id": "C-28", "amount": 53.93, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-10", "status": "pending"}
+{"txn_id": "X-00230", "customer_id": "C-28", "amount": 249.41, "currency": "USD", "merchant": "City Transit", "date": "2026-10-03", "status": "settled"}
+{"txn_id": "X-00226", "customer_id": "C-28", "amount": 200.03, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-05", "status": "settled"}
+{"txn_id": "X-00224", "customer_id": "C-28", "amount": 208.97, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-07", "status": "pending"}
+{"txn_id": "X-00233", "customer_id": "C-29", "amount": 66.8, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-06", "status": "declined"}
+{"txn_id": "X-00241", "customer_id": "C-29", "amount": 170.99, "currency": "USD", "merchant": "BookNook", "date": "2026-07-12", "status": "settled"}
+{"txn_id": "X-00234", "customer_id": "C-29", "amount": 229.69, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-13", "status": "settled"}
+{"txn_id": "X-00235", "customer_id": "C-29", "amount": 125.76, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-14", "status": "settled"}
+{"txn_id": "X-00231", "customer_id": "C-29", "amount": 318.02, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-17", "status": "settled"}
+{"txn_id": "X-00240", "customer_id": "C-29", "amount": 156.62, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-26", "status": "pending"}
+{"txn_id": "X-00237", "customer_id": "C-29", "amount": 369.61, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-31", "status": "settled"}
+{"txn_id": "X-00238", "customer_id": "C-29", "amount": 377.19, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-08", "status": "settled"}
+{"txn_id": "X-00242", "customer_id": "C-29", "amount": 441.39, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-19", "status": "settled"}
+{"txn_id": "X-00239", "customer_id": "C-29", "amount": 389.64, "currency": "USD", "merchant": "TechMart", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00236", "customer_id": "C-29", "amount": 154.26, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-28", "status": "settled"}
+{"txn_id": "X-00232", "customer_id": "C-29", "amount": 441.15, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-03", "status": "pending"}
+{"txn_id": "X-00015", "customer_id": "C-3", "amount": 121.61, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00013", "customer_id": "C-3", "amount": 172.3, "currency": "USD", "merchant": "TechMart", "date": "2026-08-11", "status": "settled"}
+{"txn_id": "X-00016", "customer_id": "C-3", "amount": 274.89, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00017", "customer_id": "C-3", "amount": 75.2, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-27", "status": "reversed"}
+{"txn_id": "X-00014", "customer_id": "C-3", "amount": 74.87, "currency": "USD", "merchant": "BookNook", "date": "2026-10-05", "status": "reversed"}
+{"txn_id": "X-00243", "customer_id": "C-30", "amount": 174.96, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-22", "status": "reversed"}
+{"txn_id": "X-00247", "customer_id": "C-30", "amount": 409.88, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-31", "status": "settled"}
+{"txn_id": "X-00252", "customer_id": "C-30", "amount": 429.45, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-01", "status": "settled"}
+{"txn_id": "X-00251", "customer_id": "C-30", "amount": 383.85, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00249", "customer_id": "C-30", "amount": 212.33, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-18", "status": "declined"}
+{"txn_id": "X-00245", "customer_id": "C-30", "amount": 227.03, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-19", "status": "settled"}
+{"txn_id": "X-00248", "customer_id": "C-30", "amount": 185.67, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-12", "status": "settled"}
+{"txn_id": "X-00246", "customer_id": "C-30", "amount": 393.64, "currency": "USD", "merchant": "TechMart", "date": "2026-10-19", "status": "pending"}
+{"txn_id": "X-00250", "customer_id": "C-30", "amount": 312.33, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-21", "status": "settled"}
+{"txn_id": "X-00244", "customer_id": "C-30", "amount": 441.41, "currency": "USD", "merchant": "TechMart", "date": "2026-10-27", "status": "settled"}
+{"txn_id": "X-00259", "customer_id": "C-31", "amount": 80.43, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-12", "status": "settled"}
+{"txn_id": "X-00257", "customer_id": "C-31", "amount": 194.95, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-25", "status": "settled"}
+{"txn_id": "X-00254", "customer_id": "C-31", "amount": 317.34, "currency": "USD", "merchant": "City Transit", "date": "2026-09-05", "status": "settled"}
+{"txn_id": "X-00256", "customer_id": "C-31", "amount": 358.67, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-16", "status": "settled"}
+{"txn_id": "X-00258", "customer_id": "C-31", "amount": 255.54, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-08", "status": "settled"}
+{"txn_id": "X-00253", "customer_id": "C-31", "amount": 336.55, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-19", "status": "reversed"}
+{"txn_id": "X-00255", "customer_id": "C-31", "amount": 312.91, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00266", "customer_id": "C-32", "amount": 49.78, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-19", "status": "settled"}
+{"txn_id": "X-00261", "customer_id": "C-32", "amount": 300.74, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-02", "status": "settled"}
+{"txn_id": "X-00260", "customer_id": "C-32", "amount": 208.6, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00265", "customer_id": "C-32", "amount": 380.7, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-12", "status": "settled"}
+{"txn_id": "X-00263", "customer_id": "C-32", "amount": 425.47, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-23", "status": "reversed"}
+{"txn_id": "X-00264", "customer_id": "C-32", "amount": 432.99, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-29", "status": "settled"}
+{"txn_id": "X-00262", "customer_id": "C-32", "amount": 305.57, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-22", "status": "settled"}
+{"txn_id": "X-00271", "customer_id": "C-33", "amount": 305.64, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-25", "status": "reversed"}
+{"txn_id": "X-00267", "customer_id": "C-33", "amount": 5.63, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-05", "status": "settled"}
+{"txn_id": "X-00272", "customer_id": "C-33", "amount": 307.02, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-12", "status": "settled"}
+{"txn_id": "X-00270", "customer_id": "C-33", "amount": 100.11, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-13", "status": "settled"}
+{"txn_id": "X-00269", "customer_id": "C-33", "amount": 349.53, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-15", "status": "settled"}
+{"txn_id": "X-00274", "customer_id": "C-33", "amount": 355.3, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-18", "status": "settled"}
+{"txn_id": "X-00268", "customer_id": "C-33", "amount": 409.96, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-29", "status": "settled"}
+{"txn_id": "X-00273", "customer_id": "C-33", "amount": 406.72, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00277", "customer_id": "C-34", "amount": 117.12, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00280", "customer_id": "C-34", "amount": 339.86, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-13", "status": "reversed"}
+{"txn_id": "X-00276", "customer_id": "C-34", "amount": 239.82, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-17", "status": "settled"}
+{"txn_id": "X-00278", "customer_id": "C-34", "amount": 435.39, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-28", "status": "settled"}
+{"txn_id": "X-00275", "customer_id": "C-34", "amount": 91.96, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-23", "status": "settled"}
+{"txn_id": "X-00279", "customer_id": "C-34", "amount": 362.3, "currency": "USD", "merchant": "TechMart", "date": "2026-10-22", "status": "settled"}
+{"txn_id": "X-00283", "customer_id": "C-35", "amount": 172.7, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00284", "customer_id": "C-35", "amount": 50.54, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-01", "status": "settled"}
+{"txn_id": "X-00281", "customer_id": "C-35", "amount": 120.48, "currency": "USD", "merchant": "City Transit", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00282", "customer_id": "C-35", "amount": 303.43, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-28", "status": "declined"}
+{"txn_id": "X-00289", "customer_id": "C-36", "amount": 205.23, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-28", "status": "pending"}
+{"txn_id": "X-00290", "customer_id": "C-36", "amount": 189.77, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-30", "status": "settled"}
+{"txn_id": "X-00297", "customer_id": "C-36", "amount": 43.07, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-10", "status": "reversed"}
+{"txn_id": "X-00287", "customer_id": "C-36", "amount": 425.93, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-29", "status": "settled"}
+{"txn_id": "X-00285", "customer_id": "C-36", "amount": 30.32, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-02", "status": "settled"}
+{"txn_id": "X-00294", "customer_id": "C-36", "amount": 46.51, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-14", "status": "pending"}
+{"txn_id": "X-00295", "customer_id": "C-36", "amount": 405.96, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-16", "status": "settled"}
+{"txn_id": "X-00293", "customer_id": "C-36", "amount": 99.34, "currency": "USD", "merchant": "TechMart", "date": "2026-10-01", "status": "settled"}
+{"txn_id": "X-00286", "customer_id": "C-36", "amount": 292.86, "currency": "USD", "merchant": "City Transit", "date": "2026-10-14", "status": "settled"}
+{"txn_id": "X-00288", "customer_id": "C-36", "amount": 45.54, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-14", "status": "settled"}
+{"txn_id": "X-00296", "customer_id": "C-36", "amount": 180.37, "currency": "USD", "merchant": "StreamBox", "date": "2026-10-16", "status": "settled"}
+{"txn_id": "X-00291", "customer_id": "C-36", "amount": 398.67, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-19", "status": "settled"}
+{"txn_id": "X-00298", "customer_id": "C-36", "amount": 269.52, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-25", "status": "settled"}
+{"txn_id": "X-00292", "customer_id": "C-36", "amount": 277.81, "currency": "USD", "merchant": "PetWorld", "date": "2026-10-27", "status": "settled"}
+{"txn_id": "X-00299", "customer_id": "C-37", "amount": 264.7, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-12", "status": "settled"}
+{"txn_id": "X-00300", "customer_id": "C-37", "amount": 149.19, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-23", "status": "declined"}
+{"txn_id": "X-00305", "customer_id": "C-37", "amount": 147.05, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-09-28", "status": "settled"}
+{"txn_id": "X-00304", "customer_id": "C-37", "amount": 162.49, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-01", "status": "declined"}
+{"txn_id": "X-00302", "customer_id": "C-37", "amount": 244.02, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-09", "status": "settled"}
+{"txn_id": "X-00301", "customer_id": "C-37", "amount": 3.27, "currency": "USD", "merchant": "Gym Central", "date": "2026-10-13", "status": "settled"}
+{"txn_id": "X-00303", "customer_id": "C-37", "amount": 298.15, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-15", "status": "settled"}
+{"txn_id": "X-00311", "customer_id": "C-38", "amount": 309.37, "currency": "USD", "merchant": "TechMart", "date": "2026-08-01", "status": "settled"}
+{"txn_id": "X-00314", "customer_id": "C-38", "amount": 285.62, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-01", "status": "settled"}
+{"txn_id": "X-00308", "customer_id": "C-38", "amount": 327.8, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-08", "status": "pending"}
+{"txn_id": "X-00307", "customer_id": "C-38", "amount": 204.5, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-14", "status": "settled"}
+{"txn_id": "X-00306", "customer_id": "C-38", "amount": 350.55, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-17", "status": "settled"}
+{"txn_id": "X-00315", "customer_id": "C-38", "amount": 172.65, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-25", "status": "settled"}
+{"txn_id": "X-00316", "customer_id": "C-38", "amount": 205.26, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-06", "status": "settled"}
+{"txn_id": "X-00310", "customer_id": "C-38", "amount": 449.37, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-10", "status": "settled"}
+{"txn_id": "X-00312", "customer_id": "C-38", "amount": 34.92, "currency": "USD", "merchant": "City Transit", "date": "2026-09-20", "status": "declined"}
+{"txn_id": "X-00313", "customer_id": "C-38", "amount": 68.45, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-09-26", "status": "declined"}
+{"txn_id": "X-00309", "customer_id": "C-38", "amount": 137.13, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-28", "status": "settled"}
+{"txn_id": "X-00322", "customer_id": "C-39", "amount": 335.58, "currency": "USD", "merchant": "BookNook", "date": "2026-07-20", "status": "settled"}
+{"txn_id": "X-00323", "customer_id": "C-39", "amount": 251.25, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-21", "status": "pending"}
+{"txn_id": "X-00317", "customer_id": "C-39", "amount": 187.39, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00321", "customer_id": "C-39", "amount": 374.63, "currency": "USD", "merchant": "City Transit", "date": "2026-09-06", "status": "settled"}
+{"txn_id": "X-00319", "customer_id": "C-39", "amount": 142.01, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-14", "status": "settled"}
+{"txn_id": "X-00318", "customer_id": "C-39", "amount": 188.36, "currency": "USD", "merchant": "City Transit", "date": "2026-09-21", "status": "settled"}
+{"txn_id": "X-00320", "customer_id": "C-39", "amount": 309.7, "currency": "USD", "merchant": "TechMart", "date": "2026-10-23", "status": "settled"}
+{"txn_id": "X-00019", "customer_id": "C-4", "amount": 121.95, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-07", "status": "declined"}
+{"txn_id": "X-00022", "customer_id": "C-4", "amount": 120.67, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-28", "status": "pending"}
+{"txn_id": "X-00023", "customer_id": "C-4", "amount": 243.46, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-18", "status": "settled"}
+{"txn_id": "X-00021", "customer_id": "C-4", "amount": 225.66, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00024", "customer_id": "C-4", "amount": 404.22, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-15", "status": "settled"}
+{"txn_id": "X-00018", "customer_id": "C-4", "amount": 370.17, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-21", "status": "settled"}
+{"txn_id": "X-00020", "customer_id": "C-4", "amount": 394.61, "currency": "USD", "merchant": "BookNook", "date": "2026-10-04", "status": "reversed"}
+{"txn_id": "X-00326", "customer_id": "C-40", "amount": 296.22, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-15", "status": "settled"}
+{"txn_id": "X-00327", "customer_id": "C-40", "amount": 158.85, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-14", "status": "settled"}
+{"txn_id": "X-00324", "customer_id": "C-40", "amount": 435.84, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-22", "status": "settled"}
+{"txn_id": "X-00325", "customer_id": "C-40", "amount": 48.41, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-04", "status": "settled"}
+{"txn_id": "X-00329", "customer_id": "C-41", "amount": 274.83, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-17", "status": "settled"}
+{"txn_id": "X-00336", "customer_id": "C-41", "amount": 141.61, "currency": "USD", "merchant": "BookNook", "date": "2026-07-24", "status": "declined"}
+{"txn_id": "X-00330", "customer_id": "C-41", "amount": 14.97, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-03", "status": "settled"}
+{"txn_id": "X-00338", "customer_id": "C-41", "amount": 339.99, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-06", "status": "settled"}
+{"txn_id": "X-00332", "customer_id": "C-41", "amount": 391.7, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-08", "status": "settled"}
+{"txn_id": "X-00333", "customer_id": "C-41", "amount": 33.17, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-11", "status": "settled"}
+{"txn_id": "X-00328", "customer_id": "C-41", "amount": 276.88, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-21", "status": "settled"}
+{"txn_id": "X-00339", "customer_id": "C-41", "amount": 123.9, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-07", "status": "settled"}
+{"txn_id": "X-00340", "customer_id": "C-41", "amount": 273.97, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-27", "status": "settled"}
+{"txn_id": "X-00334", "customer_id": "C-41", "amount": 43.11, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-04", "status": "settled"}
+{"txn_id": "X-00335", "customer_id": "C-41", "amount": 190.08, "currency": "USD", "merchant": "BookNook", "date": "2026-10-11", "status": "settled"}
+{"txn_id": "X-00337", "customer_id": "C-41", "amount": 269.11, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-12", "status": "settled"}
+{"txn_id": "X-00331", "customer_id": "C-41", "amount": 414.85, "currency": "USD", "merchant": "BookNook", "date": "2026-10-31", "status": "settled"}
+{"txn_id": "X-00344", "customer_id": "C-42", "amount": 137.04, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-25", "status": "settled"}
+{"txn_id": "X-00347", "customer_id": "C-42", "amount": 59.88, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-02", "status": "settled"}
+{"txn_id": "X-00348", "customer_id": "C-42", "amount": 226.12, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-07", "status": "settled"}
+{"txn_id": "X-00341", "customer_id": "C-42", "amount": 305.84, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-30", "status": "pending"}
+{"txn_id": "X-00346", "customer_id": "C-42", "amount": 5.46, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-06", "status": "settled"}
+{"txn_id": "X-00345", "customer_id": "C-42", "amount": 344.34, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-20", "status": "settled"}
+{"txn_id": "X-00342", "customer_id": "C-42", "amount": 300.88, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-03", "status": "settled"}
+{"txn_id": "X-00343", "customer_id": "C-42", "amount": 443.03, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-31", "status": "settled"}
+{"txn_id": "X-00353", "customer_id": "C-43", "amount": 208.12, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-06", "status": "settled"}
+{"txn_id": "X-00352", "customer_id": "C-43", "amount": 434.86, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-21", "status": "declined"}
+{"txn_id": "X-00356", "customer_id": "C-43", "amount": 179.3, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-28", "status": "settled"}
+{"txn_id": "X-00350", "customer_id": "C-43", "amount": 194.32, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-02", "status": "reversed"}
+{"txn_id": "X-00355", "customer_id": "C-43", "amount": 197.18, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-25", "status": "settled"}
+{"txn_id": "X-00358", "customer_id": "C-43", "amount": 230.7, "currency": "USD", "merchant": "City Transit", "date": "2026-08-25", "status": "pending"}
+{"txn_id": "X-00351", "customer_id": "C-43", "amount": 189.13, "currency": "USD", "merchant": "City Transit", "date": "2026-09-10", "status": "settled"}
+{"txn_id": "X-00359", "customer_id": "C-43", "amount": 88.87, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-17", "status": "settled"}
+{"txn_id": "X-00349", "customer_id": "C-43", "amount": 414.68, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-21", "status": "declined"}
+{"txn_id": "X-00357", "customer_id": "C-43", "amount": 101.26, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-10", "status": "settled"}
+{"txn_id": "X-00354", "customer_id": "C-43", "amount": 41.48, "currency": "USD", "merchant": "Gym Central", "date": "2026-10-18", "status": "settled"}
+{"txn_id": "X-00364", "customer_id": "C-44", "amount": 443.97, "currency": "USD", "merchant": "BookNook", "date": "2026-07-13", "status": "reversed"}
+{"txn_id": "X-00366", "customer_id": "C-44", "amount": 200.11, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-22", "status": "settled"}
+{"txn_id": "X-00362", "customer_id": "C-44", "amount": 209.85, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-26", "status": "declined"}
+{"txn_id": "X-00363", "customer_id": "C-44", "amount": 203.11, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-10", "status": "reversed"}
+{"txn_id": "X-00361", "customer_id": "C-44", "amount": 35.76, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-12", "status": "settled"}
+{"txn_id": "X-00367", "customer_id": "C-44", "amount": 266.96, "currency": "USD", "merchant": "BookNook", "date": "2026-08-28", "status": "settled"}
+{"txn_id": "X-00360", "customer_id": "C-44", "amount": 90.38, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-12", "status": "reversed"}
+{"txn_id": "X-00365", "customer_id": "C-44", "amount": 143.63, "currency": "USD", "merchant": "TechMart", "date": "2026-10-23", "status": "settled"}
+{"txn_id": "X-00370", "customer_id": "C-45", "amount": 261.99, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-29", "status": "settled"}
+{"txn_id": "X-00368", "customer_id": "C-45", "amount": 374.6, "currency": "USD", "merchant": "City Transit", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00371", "customer_id": "C-45", "amount": 203.48, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-19", "status": "reversed"}
+{"txn_id": "X-00376", "customer_id": "C-45", "amount": 319.01, "currency": "USD", "merchant": "TechMart", "date": "2026-08-25", "status": "pending"}
+{"txn_id": "X-00372", "customer_id": "C-45", "amount": 86.33, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-01", "status": "pending"}
+{"txn_id": "X-00373", "customer_id": "C-45", "amount": 69.59, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-09-04", "status": "settled"}
+{"txn_id": "X-00369", "customer_id": "C-45", "amount": 277.52, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-12", "status": "settled"}
+{"txn_id": "X-00374", "customer_id": "C-45", "amount": 365.31, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-18", "status": "settled"}
+{"txn_id": "X-00375", "customer_id": "C-45", "amount": 228.04, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00381", "customer_id": "C-46", "amount": 434.06, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-12", "status": "settled"}
+{"txn_id": "X-00380", "customer_id": "C-46", "amount": 175.18, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-31", "status": "reversed"}
+{"txn_id": "X-00384", "customer_id": "C-46", "amount": 177.6, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-02", "status": "settled"}
+{"txn_id": "X-00386", "customer_id": "C-46", "amount": 366.31, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-03", "status": "reversed"}
+{"txn_id": "X-00377", "customer_id": "C-46", "amount": 185.13, "currency": "USD", "merchant": "BookNook", "date": "2026-08-06", "status": "declined"}
+{"txn_id": "X-00382", "customer_id": "C-46", "amount": 151.35, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-08", "status": "settled"}
+{"txn_id": "X-00383", "customer_id": "C-46", "amount": 412.7, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-09", "status": "reversed"}
+{"txn_id": "X-00378", "customer_id": "C-46", "amount": 25.46, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00385", "customer_id": "C-46", "amount": 140.69, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00379", "customer_id": "C-46", "amount": 31.53, "currency": "USD", "merchant": "City Transit", "date": "2026-08-21", "status": "reversed"}
+{"txn_id": "X-00390", "customer_id": "C-47", "amount": 380.3, "currency": "USD", "merchant": "City Transit", "date": "2026-08-28", "status": "pending"}
+{"txn_id": "X-00387", "customer_id": "C-47", "amount": 164.44, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-04", "status": "settled"}
+{"txn_id": "X-00388", "customer_id": "C-47", "amount": 426.56, "currency": "USD", "merchant": "TechMart", "date": "2026-10-07", "status": "settled"}
+{"txn_id": "X-00389", "customer_id": "C-47", "amount": 449.99, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-22", "status": "settled"}
+{"txn_id": "X-00402", "customer_id": "C-48", "amount": 320.71, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-15", "status": "settled"}
+{"txn_id": "X-00392", "customer_id": "C-48", "amount": 364.45, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-31", "status": "settled"}
+{"txn_id": "X-00393", "customer_id": "C-48", "amount": 21.57, "currency": "USD", "merchant": "BookNook", "date": "2026-08-06", "status": "settled"}
+{"txn_id": "X-00401", "customer_id": "C-48", "amount": 217.3, "currency": "USD", "merchant": "BookNook", "date": "2026-08-22", "status": "settled"}
+{"txn_id": "X-00398", "customer_id": "C-48", "amount": 350.6, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-25", "status": "settled"}
+{"txn_id": "X-00397", "customer_id": "C-48", "amount": 426.31, "currency": "USD", "merchant": "TechMart", "date": "2026-09-02", "status": "settled"}
+{"txn_id": "X-00396", "customer_id": "C-48", "amount": 406.98, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-14", "status": "reversed"}
+{"txn_id": "X-00395", "customer_id": "C-48", "amount": 106.83, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-22", "status": "settled"}
+{"txn_id": "X-00394", "customer_id": "C-48", "amount": 436.38, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00399", "customer_id": "C-48", "amount": 434.89, "currency": "USD", "merchant": "Gym Central", "date": "2026-10-06", "status": "declined"}
+{"txn_id": "X-00391", "customer_id": "C-48", "amount": 170.77, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-08", "status": "declined"}
+{"txn_id": "X-00403", "customer_id": "C-48", "amount": 129.71, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-11", "status": "settled"}
+{"txn_id": "X-00400", "customer_id": "C-48", "amount": 64.0, "currency": "USD", "merchant": "PetWorld", "date": "2026-10-25", "status": "reversed"}
+{"txn_id": "X-00404", "customer_id": "C-49", "amount": 367.88, "currency": "USD", "merchant": "BookNook", "date": "2026-07-04", "status": "settled"}
+{"txn_id": "X-00407", "customer_id": "C-49", "amount": 14.63, "currency": "USD", "merchant": "City Transit", "date": "2026-07-16", "status": "reversed"}
+{"txn_id": "X-00405", "customer_id": "C-49", "amount": 187.87, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-28", "status": "settled"}
+{"txn_id": "X-00409", "customer_id": "C-49", "amount": 130.52, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-01", "status": "settled"}
+{"txn_id": "X-00410", "customer_id": "C-49", "amount": 341.96, "currency": "USD", "merchant": "TechMart", "date": "2026-09-04", "status": "declined"}
+{"txn_id": "X-00406", "customer_id": "C-49", "amount": 107.63, "currency": "USD", "merchant": "City Transit", "date": "2026-09-14", "status": "settled"}
+{"txn_id": "X-00408", "customer_id": "C-49", "amount": 152.21, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-14", "status": "settled"}
+{"txn_id": "X-00028", "customer_id": "C-5", "amount": 437.04, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00025", "customer_id": "C-5", "amount": 70.47, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-22", "status": "reversed"}
+{"txn_id": "X-00029", "customer_id": "C-5", "amount": 306.77, "currency": "USD", "merchant": "City Transit", "date": "2026-08-05", "status": "pending"}
+{"txn_id": "X-00027", "customer_id": "C-5", "amount": 268.96, "currency": "USD", "merchant": "TechMart", "date": "2026-08-25", "status": "settled"}
+{"txn_id": "X-00026", "customer_id": "C-5", "amount": 191.13, "currency": "USD", "merchant": "City Transit", "date": "2026-09-12", "status": "settled"}
+{"txn_id": "X-00411", "customer_id": "C-50", "amount": 247.86, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-15", "status": "pending"}
+{"txn_id": "X-00415", "customer_id": "C-50", "amount": 51.66, "currency": "USD", "merchant": "TechMart", "date": "2026-08-16", "status": "pending"}
+{"txn_id": "X-00416", "customer_id": "C-50", "amount": 9.36, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-19", "status": "settled"}
+{"txn_id": "X-00414", "customer_id": "C-50", "amount": 288.25, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00412", "customer_id": "C-50", "amount": 191.62, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00413", "customer_id": "C-50", "amount": 136.92, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-01", "status": "settled"}
+{"txn_id": "X-00420", "customer_id": "C-51", "amount": 250.26, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-12", "status": "settled"}
+{"txn_id": "X-00422", "customer_id": "C-51", "amount": 336.8, "currency": "USD", "merchant": "BookNook", "date": "2026-07-23", "status": "settled"}
+{"txn_id": "X-00424", "customer_id": "C-51", "amount": 48.44, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-29", "status": "settled"}
+{"txn_id": "X-00423", "customer_id": "C-51", "amount": 156.47, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-08", "status": "reversed"}
+{"txn_id": "X-00425", "customer_id": "C-51", "amount": 61.77, "currency": "USD", "merchant": "BookNook", "date": "2026-08-23", "status": "settled"}
+{"txn_id": "X-00419", "customer_id": "C-51", "amount": 429.12, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-28", "status": "pending"}
+{"txn_id": "X-00421", "customer_id": "C-51", "amount": 21.5, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-14", "status": "settled"}
+{"txn_id": "X-00418", "customer_id": "C-51", "amount": 301.36, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-15", "status": "settled"}
+{"txn_id": "X-00417", "customer_id": "C-51", "amount": 109.77, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-08", "status": "reversed"}
+{"txn_id": "X-00426", "customer_id": "C-52", "amount": 30.27, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-03", "status": "settled"}
+{"txn_id": "X-00428", "customer_id": "C-52", "amount": 398.83, "currency": "USD", "merchant": "BookNook", "date": "2026-07-04", "status": "settled"}
+{"txn_id": "X-00431", "customer_id": "C-52", "amount": 130.18, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-24", "status": "settled"}
+{"txn_id": "X-00430", "customer_id": "C-52", "amount": 115.48, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00429", "customer_id": "C-52", "amount": 232.89, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-23", "status": "settled"}
+{"txn_id": "X-00427", "customer_id": "C-52", "amount": 18.57, "currency": "USD", "merchant": "StreamBox", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00440", "customer_id": "C-53", "amount": 159.49, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-30", "status": "settled"}
+{"txn_id": "X-00439", "customer_id": "C-53", "amount": 323.51, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-04", "status": "settled"}
+{"txn_id": "X-00434", "customer_id": "C-53", "amount": 166.57, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-26", "status": "settled"}
+{"txn_id": "X-00433", "customer_id": "C-53", "amount": 153.89, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-08-29", "status": "settled"}
+{"txn_id": "X-00438", "customer_id": "C-53", "amount": 298.09, "currency": "USD", "merchant": "PetWorld", "date": "2026-09-04", "status": "declined"}
+{"txn_id": "X-00432", "customer_id": "C-53", "amount": 400.49, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-05", "status": "settled"}
+{"txn_id": "X-00435", "customer_id": "C-53", "amount": 360.91, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-07", "status": "settled"}
+{"txn_id": "X-00441", "customer_id": "C-53", "amount": 277.45, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-26", "status": "reversed"}
+{"txn_id": "X-00436", "customer_id": "C-53", "amount": 194.91, "currency": "USD", "merchant": "Gym Central", "date": "2026-10-08", "status": "pending"}
+{"txn_id": "X-00437", "customer_id": "C-53", "amount": 133.61, "currency": "USD", "merchant": "City Transit", "date": "2026-10-21", "status": "settled"}
+{"txn_id": "X-00450", "customer_id": "C-54", "amount": 225.57, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-07", "status": "pending"}
+{"txn_id": "X-00453", "customer_id": "C-54", "amount": 91.68, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-14", "status": "settled"}
+{"txn_id": "X-00444", "customer_id": "C-54", "amount": 32.12, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00447", "customer_id": "C-54", "amount": 200.88, "currency": "USD", "merchant": "City Transit", "date": "2026-08-19", "status": "settled"}
+{"txn_id": "X-00454", "customer_id": "C-54", "amount": 204.52, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-05", "status": "settled"}
+{"txn_id": "X-00446", "customer_id": "C-54", "amount": 70.74, "currency": "USD", "merchant": "TechMart", "date": "2026-09-14", "status": "settled"}
+{"txn_id": "X-00448", "customer_id": "C-54", "amount": 239.2, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-21", "status": "reversed"}
+{"txn_id": "X-00455", "customer_id": "C-54", "amount": 365.11, "currency": "USD", "merchant": "Gym Central", "date": "2026-09-21", "status": "reversed"}
+{"txn_id": "X-00452", "customer_id": "C-54", "amount": 98.13, "currency": "USD", "merchant": "Cinema Max", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00451", "customer_id": "C-54", "amount": 54.76, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-28", "status": "settled"}
+{"txn_id": "X-00442", "customer_id": "C-54", "amount": 73.67, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-13", "status": "declined"}
+{"txn_id": "X-00443", "customer_id": "C-54", "amount": 305.78, "currency": "USD", "merchant": "TechMart", "date": "2026-10-27", "status": "settled"}
+{"txn_id": "X-00445", "customer_id": "C-54", "amount": 164.24, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-27", "status": "declined"}
+{"txn_id": "X-00449", "customer_id": "C-54", "amount": 126.85, "currency": "USD", "merchant": "City Transit", "date": "2026-10-28", "status": "settled"}
+{"txn_id": "X-00457", "customer_id": "C-55", "amount": 56.37, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-22", "status": "settled"}
+{"txn_id": "X-00465", "customer_id": "C-55", "amount": 59.49, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-24", "status": "pending"}
+{"txn_id": "X-00466", "customer_id": "C-55", "amount": 288.63, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-07-25", "status": "settled"}
+{"txn_id": "X-00461", "customer_id": "C-55", "amount": 180.38, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-31", "status": "settled"}
+{"txn_id": "X-00463", "customer_id": "C-55", "amount": 35.04, "currency": "USD", "merchant": "BookNook", "date": "2026-08-10", "status": "settled"}
+{"txn_id": "X-00464", "customer_id": "C-55", "amount": 203.59, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-26", "status": "settled"}
+{"txn_id": "X-00456", "customer_id": "C-55", "amount": 79.99, "currency": "USD", "merchant": "BookNook", "date": "2026-08-27", "status": "settled"}
+{"txn_id": "X-00459", "customer_id": "C-55", "amount": 250.2, "currency": "USD", "merchant": "BookNook", "date": "2026-09-02", "status": "pending"}
+{"txn_id": "X-00462", "customer_id": "C-55", "amount": 237.51, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-09", "status": "declined"}
+{"txn_id": "X-00469", "customer_id": "C-55", "amount": 146.55, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-03", "status": "settled"}
+{"txn_id": "X-00468", "customer_id": "C-55", "amount": 234.11, "currency": "USD", "merchant": "PetWorld", "date": "2026-10-10", "status": "settled"}
+{"txn_id": "X-00460", "customer_id": "C-55", "amount": 60.14, "currency": "USD", "merchant": "City Transit", "date": "2026-10-23", "status": "settled"}
+{"txn_id": "X-00467", "customer_id": "C-55", "amount": 195.81, "currency": "USD", "merchant": "Gym Central", "date": "2026-10-24", "status": "settled"}
+{"txn_id": "X-00458", "customer_id": "C-55", "amount": 108.06, "currency": "USD", "merchant": "TechMart", "date": "2026-10-28", "status": "settled"}
+{"txn_id": "X-00472", "customer_id": "C-56", "amount": 289.16, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-03", "status": "declined"}
+{"txn_id": "X-00475", "customer_id": "C-56", "amount": 38.39, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-25", "status": "declined"}
+{"txn_id": "X-00476", "customer_id": "C-56", "amount": 120.57, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-25", "status": "declined"}
+{"txn_id": "X-00483", "customer_id": "C-56", "amount": 387.95, "currency": "USD", "merchant": "BookNook", "date": "2026-07-30", "status": "settled"}
+{"txn_id": "X-00473", "customer_id": "C-56", "amount": 71.08, "currency": "USD", "merchant": "AirNorth", "date": "2026-08-13", "status": "declined"}
+{"txn_id": "X-00481", "customer_id": "C-56", "amount": 72.82, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-31", "status": "settled"}
+{"txn_id": "X-00478", "customer_id": "C-56", "amount": 400.27, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-24", "status": "reversed"}
+{"txn_id": "X-00479", "customer_id": "C-56", "amount": 430.58, "currency": "USD", "merchant": "TechMart", "date": "2026-09-30", "status": "reversed"}
+{"txn_id": "X-00482", "customer_id": "C-56", "amount": 93.4, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-13", "status": "settled"}
+{"txn_id": "X-00470", "customer_id": "C-56", "amount": 430.45, "currency": "USD", "merchant": "PetWorld", "date": "2026-10-15", "status": "reversed"}
+{"txn_id": "X-00471", "customer_id": "C-56", "amount": 137.67, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-20", "status": "pending"}
+{"txn_id": "X-00480", "customer_id": "C-56", "amount": 183.93, "currency": "USD", "merchant": "TechMart", "date": "2026-10-22", "status": "settled"}
+{"txn_id": "X-00474", "customer_id": "C-56", "amount": 153.25, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-26", "status": "settled"}
+{"txn_id": "X-00477", "customer_id": "C-56", "amount": 188.63, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-28", "status": "settled"}
+{"txn_id": "X-00487", "customer_id": "C-57", "amount": 189.32, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-08", "status": "settled"}
+{"txn_id": "X-00486", "customer_id": "C-57", "amount": 132.01, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-13", "status": "declined"}
+{"txn_id": "X-00488", "customer_id": "C-57", "amount": 366.44, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-31", "status": "settled"}
+{"txn_id": "X-00484", "customer_id": "C-57", "amount": 144.96, "currency": "USD", "merchant": "TechMart", "date": "2026-10-16", "status": "settled"}
+{"txn_id": "X-00485", "customer_id": "C-57", "amount": 203.42, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-10-19", "status": "settled"}
+{"txn_id": "X-00492", "customer_id": "C-58", "amount": 128.05, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-11", "status": "reversed"}
+{"txn_id": "X-00498", "customer_id": "C-58", "amount": 175.08, "currency": "USD", "merchant": "TechMart", "date": "2026-07-26", "status": "pending"}
+{"txn_id": "X-00499", "customer_id": "C-58", "amount": 127.31, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-05", "status": "declined"}
+{"txn_id": "X-00496", "customer_id": "C-58", "amount": 22.27, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-20", "status": "pending"}
+{"txn_id": "X-00493", "customer_id": "C-58", "amount": 303.29, "currency": "USD", "merchant": "PetWorld", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00490", "customer_id": "C-58", "amount": 425.46, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00495", "customer_id": "C-58", "amount": 327.92, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-09-10", "status": "settled"}
+{"txn_id": "X-00497", "customer_id": "C-58", "amount": 89.21, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-25", "status": "settled"}
+{"txn_id": "X-00494", "customer_id": "C-58", "amount": 381.53, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-14", "status": "settled"}
+{"txn_id": "X-00491", "customer_id": "C-58", "amount": 98.38, "currency": "USD", "merchant": "BookNook", "date": "2026-10-25", "status": "settled"}
+{"txn_id": "X-00489", "customer_id": "C-58", "amount": 395.83, "currency": "USD", "merchant": "TechMart", "date": "2026-10-29", "status": "settled"}
+{"txn_id": "X-00506", "customer_id": "C-59", "amount": 445.8, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-16", "status": "settled"}
+{"txn_id": "X-00507", "customer_id": "C-59", "amount": 267.99, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-17", "status": "pending"}
+{"txn_id": "X-00500", "customer_id": "C-59", "amount": 251.91, "currency": "USD", "merchant": "BookNook", "date": "2026-07-27", "status": "settled"}
+{"txn_id": "X-00508", "customer_id": "C-59", "amount": 240.49, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-20", "status": "settled"}
+{"txn_id": "X-00503", "customer_id": "C-59", "amount": 362.18, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-03", "status": "settled"}
+{"txn_id": "X-00501", "customer_id": "C-59", "amount": 91.18, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-10", "status": "pending"}
+{"txn_id": "X-00505", "customer_id": "C-59", "amount": 419.25, "currency": "USD", "merchant": "BookNook", "date": "2026-10-11", "status": "settled"}
+{"txn_id": "X-00502", "customer_id": "C-59", "amount": 20.03, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-14", "status": "settled"}
+{"txn_id": "X-00504", "customer_id": "C-59", "amount": 273.6, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-14", "status": "settled"}
+{"txn_id": "X-00035", "customer_id": "C-6", "amount": 429.17, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-06", "status": "settled"}
+{"txn_id": "X-00030", "customer_id": "C-6", "amount": 205.27, "currency": "USD", "merchant": "HomeFix", "date": "2026-07-11", "status": "settled"}
+{"txn_id": "X-00032", "customer_id": "C-6", "amount": 410.86, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-12", "status": "settled"}
+{"txn_id": "X-00033", "customer_id": "C-6", "amount": 379.07, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-08-15", "status": "settled"}
+{"txn_id": "X-00031", "customer_id": "C-6", "amount": 437.41, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-09", "status": "pending"}
+{"txn_id": "X-00034", "customer_id": "C-6", "amount": 70.47, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-11", "status": "pending"}
+{"txn_id": "X-00518", "customer_id": "C-60", "amount": 226.82, "currency": "USD", "merchant": "Cinema Max", "date": "2026-07-06", "status": "settled"}
+{"txn_id": "X-00509", "customer_id": "C-60", "amount": 263.5, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-08", "status": "reversed"}
+{"txn_id": "X-00513", "customer_id": "C-60", "amount": 78.39, "currency": "USD", "merchant": "AirNorth", "date": "2026-07-31", "status": "declined"}
+{"txn_id": "X-00515", "customer_id": "C-60", "amount": 110.5, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-03", "status": "settled"}
+{"txn_id": "X-00511", "customer_id": "C-60", "amount": 352.74, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-18", "status": "declined"}
+{"txn_id": "X-00512", "customer_id": "C-60", "amount": 103.94, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-08-18", "status": "settled"}
+{"txn_id": "X-00516", "customer_id": "C-60", "amount": 87.47, "currency": "USD", "merchant": "TechMart", "date": "2026-09-21", "status": "settled"}
+{"txn_id": "X-00510", "customer_id": "C-60", "amount": 13.94, "currency": "USD", "merchant": "TechMart", "date": "2026-09-28", "status": "reversed"}
+{"txn_id": "X-00517", "customer_id": "C-60", "amount": 69.84, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-05", "status": "settled"}
+{"txn_id": "X-00514", "customer_id": "C-60", "amount": 349.02, "currency": "USD", "merchant": "FuelStop", "date": "2026-10-13", "status": "reversed"}
+{"txn_id": "X-00037", "customer_id": "C-7", "amount": 109.27, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-11", "status": "declined"}
+{"txn_id": "X-00036", "customer_id": "C-7", "amount": 395.67, "currency": "USD", "merchant": "Gym Central", "date": "2026-07-20", "status": "settled"}
+{"txn_id": "X-00042", "customer_id": "C-7", "amount": 434.03, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-27", "status": "settled"}
+{"txn_id": "X-00038", "customer_id": "C-7", "amount": 426.23, "currency": "USD", "merchant": "City Transit", "date": "2026-07-30", "status": "settled"}
+{"txn_id": "X-00043", "customer_id": "C-7", "amount": 321.4, "currency": "USD", "merchant": "FuelStop", "date": "2026-08-07", "status": "reversed"}
+{"txn_id": "X-00041", "customer_id": "C-7", "amount": 120.75, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-15", "status": "settled"}
+{"txn_id": "X-00040", "customer_id": "C-7", "amount": 59.52, "currency": "USD", "merchant": "TechMart", "date": "2026-08-22", "status": "settled"}
+{"txn_id": "X-00039", "customer_id": "C-7", "amount": 367.58, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00044", "customer_id": "C-7", "amount": 169.29, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-04", "status": "settled"}
+{"txn_id": "X-00047", "customer_id": "C-8", "amount": 32.2, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-07-13", "status": "settled"}
+{"txn_id": "X-00055", "customer_id": "C-8", "amount": 182.37, "currency": "USD", "merchant": "BookNook", "date": "2026-07-21", "status": "settled"}
+{"txn_id": "X-00050", "customer_id": "C-8", "amount": 260.14, "currency": "USD", "merchant": "StreamBox", "date": "2026-07-23", "status": "settled"}
+{"txn_id": "X-00056", "customer_id": "C-8", "amount": 113.4, "currency": "USD", "merchant": "StreamBox", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00052", "customer_id": "C-8", "amount": 297.22, "currency": "USD", "merchant": "BookNook", "date": "2026-09-07", "status": "settled"}
+{"txn_id": "X-00048", "customer_id": "C-8", "amount": 33.74, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-26", "status": "reversed"}
+{"txn_id": "X-00057", "customer_id": "C-8", "amount": 64.8, "currency": "USD", "merchant": "GreenGrocer", "date": "2026-09-26", "status": "settled"}
+{"txn_id": "X-00045", "customer_id": "C-8", "amount": 250.16, "currency": "USD", "merchant": "Cinema Max", "date": "2026-10-03", "status": "settled"}
+{"txn_id": "X-00049", "customer_id": "C-8", "amount": 219.47, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-10-15", "status": "declined"}
+{"txn_id": "X-00051", "customer_id": "C-8", "amount": 363.76, "currency": "USD", "merchant": "StreamBox", "date": "2026-10-19", "status": "settled"}
+{"txn_id": "X-00054", "customer_id": "C-8", "amount": 294.75, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-19", "status": "settled"}
+{"txn_id": "X-00046", "customer_id": "C-8", "amount": 33.8, "currency": "USD", "merchant": "AirNorth", "date": "2026-10-24", "status": "settled"}
+{"txn_id": "X-00053", "customer_id": "C-8", "amount": 211.23, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-25", "status": "reversed"}
+{"txn_id": "X-00059", "customer_id": "C-9", "amount": 436.11, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-15", "status": "settled"}
+{"txn_id": "X-00058", "customer_id": "C-9", "amount": 294.16, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-07-16", "status": "settled"}
+{"txn_id": "X-00060", "customer_id": "C-9", "amount": 76.51, "currency": "USD", "merchant": "TechMart", "date": "2026-08-31", "status": "settled"}
+{"txn_id": "X-00061", "customer_id": "C-9", "amount": 389.36, "currency": "USD", "merchant": "Corner Cafe", "date": "2026-10-10", "status": "settled"}
+{"txn_id": "X-00521", "customer_id": "C-99", "amount": 160.72, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-07-12", "status": "reversed"}
+{"txn_id": "X-00528", "customer_id": "C-99", "amount": 172.1, "currency": "USD", "merchant": "FuelStop", "date": "2026-07-19", "status": "settled"}
+{"txn_id": "X-00524", "customer_id": "C-99", "amount": 135.73, "currency": "USD", "merchant": "PetWorld", "date": "2026-07-25", "status": "settled"}
+{"txn_id": "X-00525", "customer_id": "C-99", "amount": 317.8, "currency": "USD", "merchant": "HomeFix", "date": "2026-08-02", "status": "settled"}
+{"txn_id": "X-00527", "customer_id": "C-99", "amount": 130.93, "currency": "USD", "merchant": "Cinema Max", "date": "2026-08-06", "status": "pending"}
+{"txn_id": "X-00526", "customer_id": "C-99", "amount": 144.03, "currency": "USD", "merchant": "BookNook", "date": "2026-08-21", "status": "settled"}
+{"txn_id": "X-00532", "customer_id": "C-99", "amount": 97.87, "currency": "USD", "merchant": "Gym Central", "date": "2026-08-24", "status": "settled"}
+{"txn_id": "X-00520", "customer_id": "C-99", "amount": 207.93, "currency": "USD", "merchant": "Sunrise Pharmacy", "date": "2026-09-18", "status": "pending"}
+{"txn_id": "X-00519", "customer_id": "C-99", "amount": 216.31, "currency": "USD", "merchant": "FuelStop", "date": "2026-09-21", "status": "settled"}
+{"txn_id": "X-00523", "customer_id": "C-99", "amount": 218.91, "currency": "USD", "merchant": "StreamBox", "date": "2026-09-26", "status": "pending"}
+{"txn_id": "X-00522", "customer_id": "C-99", "amount": 290.2, "currency": "USD", "merchant": "HomeFix", "date": "2026-09-28", "status": "declined"}
+{"txn_id": "X-00531", "customer_id": "C-99", "amount": 415.96, "currency": "USD", "merchant": "AirNorth", "date": "2026-09-29", "status": "settled"}
+{"txn_id": "X-00529", "customer_id": "C-99", "amount": 429.66, "currency": "USD", "merchant": "Pizza Planet", "date": "2026-10-13", "status": "settled"}
+{"txn_id": "X-00530", "customer_id": "C-99", "amount": 20.85, "currency": "USD", "merchant": "HomeFix", "date": "2026-10-21", "status": "settled"}

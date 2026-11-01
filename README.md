@@ -6,11 +6,12 @@ An operations agent for Northwind Pay, a fictional digital bank (see `docs/domai
 
 | Path | Purpose |
 |---|---|
-| `docs/` | Domain bible, specs (`spec-a1.md`), decisions log, agent log |
-| `data/` | `tickets.jsonl` (generated), `kb/` policy docs; raw data is gitignored |
+| `docs/` | Domain bible, plans and specs (`spec-a1.md`, `spec-a3.md`), decisions log, agent log, eval notes |
+| `data/` | `tickets.jsonl`, `customers.jsonl`, `transactions.jsonl` (generated), `kb/` policy docs; raw data is gitignored |
 | `tools/gen/` | Seeded scripts that build or ingest the data |
-| `mockapi/` | Mock REST API (customers, accounts, transactions, incidents, tickets) |
-| `mcp_server/` | MCP server wrapping the mock API |
+| `mockapi/` | Mock REST API (tickets, customers, transactions, policies, notes) |
+| `mcp_server/` | MCP server wrapping the mock API: 6 tools, 1 resource |
+| `skills/` | Agent skills (`triage-ticket/SKILL.md`) |
 | `opspilot/` | The agent (see below) |
 | `ml/` | Ticket classifier and anomaly detector |
 | `evals/` | Eval datasets and graders |
@@ -29,11 +30,22 @@ cp .env.example .env   # then set LLM_PROVIDER and the matching key
 ```bash
 python -m opspilot "show ticket T-1001"              # JSON, no LLM
 python -m opspilot "tickets for customer C-17"       # JSON, no LLM
-python -m opspilot "why is T-1001 still open?"       # LLM, ticket as context
 python -m opspilot "how long do I have to file a dispute?"   # LLM + cited policy
 ```
 
-Switch provider by changing `LLM_PROVIDER` in `.env` (`groq`, `openai`, `ollama`, `fake`). Only `opspilot/llm.py` and `opspilot/config.py` know about providers.
+Switch provider by changing `LLM_PROVIDER` in `.env` (`groq`, `openai`, `gemini`, `ollama`, `fake`). Only `opspilot/llm.py` and `opspilot/config.py` know about providers.
+
+## Run (A3: tools over MCP)
+
+```bash
+python -m uvicorn mockapi.main:app --port 8000        # terminal 1: the mock API
+python -m opspilot "why is T-1002 still open?"        # terminal 2: agent starts the MCP server itself (stdio)
+python -m opspilot "does C-17 have a history of problems?"
+python -m opspilot "triage T-1001"                    # loads skills/triage-ticket
+python evals/run_a3.py                                # live run; prints every tool call
+```
+
+Free-text questions about a ticket or customer go through the tool-calling agent; bare lookups and policy questions keep the A1 paths. Set `OPSPILOT_API_URL` if the API is not on `127.0.0.1:8000`. `MOCKAPI_FAIL_RATE` and `MOCKAPI_LATENCY_MS` simulate a flaky upstream. Inspect the server with `npx @modelcontextprotocol/inspector .venv/bin/python -m mcp_server`.
 
 ## Test and eval
 
@@ -41,10 +53,14 @@ Switch provider by changing `LLM_PROVIDER` in `.env` (`groq`, `openai`, `ollama`
 LLM_PROVIDER=fake python -m pytest -q       # offline, free
 LLM_PROVIDER=groq python evals/run_a1.py    # live eval, record in docs/a1-eval.md
 python tools/gen/make_tickets.py            # regenerate data/tickets.jsonl (needs data/raw/banking77)
+python tools/gen/make_customers.py          # regenerate customers and transactions
 ```
 
 ## A1 modules
 `router.py` (regex, then LLM intent), `tickets.py` (plain-code lookups), `policies.py` (BM25 + cited answers), `schemas.py` (Pydantic source of truth), `llm.py` (`complete()`, retry, backoff, trace), `fake_llm.py` (offline provider), `config.py`, `cli.py`.
+
+## A3 modules
+`mockapi/main.py` (FastAPI), `mcp_server/server.py` (tools, resource, error contract), `opspilot/mcp_client.py` (`ToolBox`: OpenAI-format tools, schema check, error mapping), `opspilot/agent.py` (bounded loop, write gate, repeat guard).
 
 ## What I would change
 - Verify model IDs and run the live eval before trusting any answer quality claim.
@@ -52,3 +68,5 @@ python tools/gen/make_tickets.py            # regenerate data/tickets.jsonl (nee
 - The history-question check is a keyword list; an LLM or better parse would be sturdier.
 - The ticket-vs-question split relies on a lookup-word list and will misroute unusual phrasings to the LLM path.
 - Traces go to `traces/llm_calls.jsonl` as plain JSONL; A5/A6 will want structure and IDs.
+- A3: the agent answers more than the tool results show (docs/a3-eval.md #1); a "state only what the tools returned" check belongs in the A6 evals.
+- A3: the mock API must be started by hand; a single dev command would help.
