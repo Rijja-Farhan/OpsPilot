@@ -6,9 +6,10 @@ import json
 import re
 from pathlib import Path
 
-from opspilot import llm
+from opspilot import llm, tickets
 from opspilot.config import ROOT
 from opspilot.mcp_client import ToolBox
+from opspilot.memory import Memory, extract_fact
 
 MAX_STEPS = 6
 WRITE_TOOLS = frozenset({"add_ticket_note"})
@@ -40,21 +41,41 @@ def _error(code: str, message: str) -> dict:
     return {"error": {"code": code, "message": message, "retryable": False}}
 
 
-async def run(question: str, toolbox: ToolBox, max_steps: int = MAX_STEPS) -> str:
+def customers_in(question: str) -> list[str]:
+    """Customer IDs named in the question, directly or through a ticket ID (plain-code lookup, no model)."""
+    found = [c.upper() for c in re.findall(r"\bC-\d+\b", question, re.I)]
+    for t in re.findall(r"\bT-\d+\b", question, re.I):
+        ticket = tickets.get_ticket(t)
+        if ticket:
+            found.append(ticket.customer_id)
+    return list(dict.fromkeys(found))[:3]
+
+
+async def run(question: str, toolbox: ToolBox, max_steps: int = MAX_STEPS, memory: Memory | None = None) -> str:
+    memory = memory or Memory()
+    if fact := extract_fact(question):  # an explicit user statement: the only way a semantic fact is stored
+        entry = memory.remember_fact(*fact)
+        return f"Noted for {entry.customer_id}: {entry.summary} (valid from {entry.valid_from})."
     system = SYSTEM_PROMPT
     if TRIAGE_WORDS.search(question):
         system += "\n\nWhen asked to triage a ticket, follow this procedure:\n" + load_skill("triage-ticket")
+    if block := memory.block_for(customers_in(question)):
+        system += "\n\n" + block
     messages = [{"role": "system", "content": system}, {"role": "user", "content": question}]
     tools = await toolbox.openai_tools()
     may_write = re.search(r"\bnotes?\b", question, re.I) is not None
     seen: set[tuple[str, str]] = set()
+    trace: list[tuple[str, dict, dict]] = []
 
+    answer, outcome = f"I stopped after {max_steps} tool-calling steps without reaching an answer. Try a narrower question.", "hit_step_limit"
     for _ in range(max_steps):
         res = llm.complete(messages, tools=tools)
         if not res.ok:
-            return f"Sorry, I couldn't produce an answer right now ({res.error.code})."
+            answer, outcome = f"Sorry, I couldn't produce an answer right now ({res.error.code}).", "model_error"
+            break
         if not res.tool_calls:
-            return res.text
+            answer, outcome = res.text, "answered"
+            break
         messages.append(res.assistant_message)
         for call in res.tool_calls:
             key = (call.name, call.arguments)
@@ -71,6 +92,8 @@ async def run(question: str, toolbox: ToolBox, max_steps: int = MAX_STEPS) -> st
                     result = _error("not_permitted", "The user did not ask for this write action. Do not retry it.")
                 else:
                     result = await toolbox.call(call.name, args)
+                    trace.append((call.name, args, result))
             seen.add(key)
             messages.append({"role": "tool", "tool_call_id": call.id, "content": wrap_result(result)})
-    return f"I stopped after {max_steps} tool-calling steps without reaching an answer. Try a narrower question."
+    memory.record_run(trace, outcome)  # by code, from enumerated fields; never from model text
+    return answer

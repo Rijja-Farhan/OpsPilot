@@ -1,0 +1,596 @@
+{
+  "best_C": 10.0,
+  "val_macro_f1_by_C": {
+    "1.0": 0.9381378645884326,
+    "3.0": 0.9435926343496828,
+    "10.0": 0.9512772871016969,
+    "30.0": 0.947810719295006
+  },
+  "majority_class": "transfers_payments",
+  "threshold": {
+    "threshold": 0.7,
+    "deferred_share": 0.07384230287859828,
+    "accuracy_on_kept": 0.9858108108108108,
+    "accuracy_all": 0.9624530663329162
+  },
+  "threshold_curve_val": [
+    {
+      "threshold": 0.0,
+      "expected_cost": 0.05736137667304015,
+      "deferred_share": 0.0,
+      "accuracy_on_kept": 0.9553855959209687
+    },
+    {
+      "threshold": 0.05,
+      "expected_cost": 0.05736137667304015,
+      "deferred_share": 0.0,
+      "accuracy_on_kept": 0.9553855959209687
+    },
+    {
+      "threshold": 0.1,
+      "expected_cost": 0.05736137667304015,
+      "deferred_share": 0.0,
+      "accuracy_on_kept": 0.9553855959209687
+    },
+    {
+      "threshold": 0.15,
+      "expected_cost": 0.05736137667304015,
+      "deferred_share": 0.0,
+      "accuracy_on_kept": 0.9553855959209687
+    },
+    {
+      "threshold": 0.2,
+      "expected_cost": 0.05736137667304015,
+      "deferred_share": 0.0,
+      "accuracy_on_kept": 0.9553855959209687
+    },
+    {
+      "threshold": 0.25,
+      "expected_cost": 0.057552581261950286,
+      "deferred_share": 0.0006373486297004461,
+      "accuracy_on_kept": 0.9553571428571429
+    },
+    {
+      "threshold": 0.3,
+      "expected_cost": 0.05666029318036966,
+      "deferred_share": 0.0019120458891013384,
+      "accuracy_on_kept": 0.9565772669220945
+    },
+    {
+      "threshold": 0.35,
+      "expected_cost": 0.05704270235818993,
+      "deferred_share": 0.0031867431485022306,
+      "accuracy_on_kept": 0.9565217391304348
+    },
+    {
+      "threshold": 0.4,
+      "expected_cost": 0.05697896749521988,
+      "deferred_share": 0.005098789037603569,
+      "accuracy_on_kept": 0.957078795643818
+    },
+    {
+      "threshold": 0.45,
+      "expected_cost": 0.05500318674314849,
+      "deferred_share": 0.01338432122370937,
+      "accuracy_on_kept": 0.9612403100775194
+    },
+    {
+      "threshold": 0.5,
+      "expected_cost": 0.052135117909496466,
+      "deferred_share": 0.022944550669216062,
+      "accuracy_on_kept": 0.964122635355512
+    },
+    {
+      "threshold": 0.55,
+      "expected_cost": 0.04557042702358187,
+      "deferred_share": 0.03505417463352454,
+      "accuracy_on_kept": 0.9689564068692206
+    },
+    {
+      "threshold": 0.6,
+      "expected_cost": 0.0444869343530911,
+      "deferred_share": 0.04843849585723391,
+      "accuracy_on_kept": 0.9738780977896851
+    },
+    {
+      "threshold": 0.65,
+      "expected_cost": 0.04161886551943908,
+      "deferred_share": 0.0579987253027406,
+      "accuracy_on_kept": 0.9769959404600812
+    },
+    {
+      "threshold": 0.7,
+      "expected_cost": 0.03913320586360733,
+      "deferred_share": 0.07520713830465264,
+      "accuracy_on_kept": 0.9820813232253618
+    },
+    {
+      "threshold": 0.75,
+      "expected_cost": 0.03996175908221787,
+      "deferred_share": 0.09496494582536648,
+      "accuracy_on_kept": 0.9873239436619718
+    },
+    {
+      "threshold": 0.8,
+      "expected_cost": 0.0433397068196302,
+      "deferred_share": 0.12109623964308477,
+      "accuracy_on_kept": 0.9920232052211748
+    },
+    {
+      "threshold": 0.85,
+      "expected_cost": 0.05143403441682578,
+      "deferred_share": 0.1586998087954111,
+      "accuracy_on_kept": 0.9954545454545455
+    },
+    {
+      "threshold": 0.9,
+      "expected_cost": 0.06532823454429537,
+      "deferred_share": 0.207138304652645,
+      "accuracy_on_kept": 0.9959807073954984
+    },
+    {
+      "threshold": 0.95,
+      "expected_cost": 0.09796048438495863,
+      "deferred_share": 0.31803696622052263,
+      "accuracy_on_kept": 0.9962616822429906
+    }
+  ],
+  "test": {
+    "classifier": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.9663032705649157,
+          "recall": 0.975975975975976,
+          "f1": 0.9711155378486056,
+          "support": 999
+        },
+        "transfers_payments": {
+          "precision": 0.9696969696969697,
+          "recall": 0.9476082004555809,
+          "f1": 0.9585253456221198,
+          "support": 878
+        },
+        "account_access": {
+          "precision": 0.9789473684210527,
+          "recall": 0.9964285714285714,
+          "f1": 0.9876106194690265,
+          "support": 280
+        },
+        "fees_charges": {
+          "precision": 0.9714285714285714,
+          "recall": 0.951048951048951,
+          "f1": 0.9611307420494699,
+          "support": 429
+        },
+        "fraud_security": {
+          "precision": 0.9359605911330049,
+          "recall": 0.95,
+          "f1": 0.9429280397022333,
+          "support": 200
+        },
+        "loans_credit": {
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1": 0.9,
+          "support": 90
+        },
+        "disputes_refunds": {
+          "precision": 0.9390243902439024,
+          "recall": 0.9625,
+          "f1": 0.9506172839506173,
+          "support": 160
+        },
+        "other": {
+          "precision": 0.9401197604790419,
+          "recall": 0.98125,
+          "f1": 0.9602446483180428,
+          "support": 160
+        }
+      },
+      "macro_f1": 0.9540215271200144,
+      "accuracy": 0.9624530663329162,
+      "n": 3196,
+      "confusion": [
+        [
+          975,
+          10,
+          2,
+          3,
+          4,
+          2,
+          1,
+          2
+        ],
+        [
+          21,
+          832,
+          3,
+          4,
+          5,
+          3,
+          4,
+          6
+        ],
+        [
+          0,
+          0,
+          279,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          4,
+          6,
+          1,
+          408,
+          3,
+          4,
+          2,
+          1
+        ],
+        [
+          6,
+          2,
+          0,
+          1,
+          190,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          0,
+          3,
+          0,
+          81,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0,
+          0,
+          1,
+          0,
+          154,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          157
+        ]
+      ]
+    },
+    "keyword_rules": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.8178137651821862,
+          "recall": 0.8088088088088088,
+          "f1": 0.813286361348767,
+          "support": 999
+        },
+        "transfers_payments": {
+          "precision": 0.8731988472622478,
+          "recall": 0.6902050113895216,
+          "f1": 0.7709923664122137,
+          "support": 878
+        },
+        "account_access": {
+          "precision": 0.6813186813186813,
+          "recall": 0.6642857142857143,
+          "f1": 0.6726943942133815,
+          "support": 280
+        },
+        "fees_charges": {
+          "precision": 0.8735083532219571,
+          "recall": 0.8531468531468531,
+          "f1": 0.8632075471698113,
+          "support": 429
+        },
+        "fraud_security": {
+          "precision": 0.7066666666666667,
+          "recall": 0.265,
+          "f1": 0.38545454545454544,
+          "support": 200
+        },
+        "loans_credit": {
+          "precision": 0.2975609756097561,
+          "recall": 0.6777777777777778,
+          "f1": 0.4135593220338983,
+          "support": 90
+        },
+        "disputes_refunds": {
+          "precision": 0.8181818181818182,
+          "recall": 0.50625,
+          "f1": 0.6254826254826255,
+          "support": 160
+        },
+        "other": {
+          "precision": 0.24379232505643342,
+          "recall": 0.675,
+          "f1": 0.3582089552238806,
+          "support": 160
+        }
+      },
+      "macro_f1": 0.6128607646673904,
+      "accuracy": 0.7099499374217773,
+      "n": 3196,
+      "confusion": [
+        [
+          808,
+          21,
+          10,
+          23,
+          20,
+          34,
+          0,
+          83
+        ],
+        [
+          95,
+          606,
+          26,
+          4,
+          0,
+          65,
+          11,
+          71
+        ],
+        [
+          0,
+          2,
+          186,
+          0,
+          1,
+          13,
+          0,
+          78
+        ],
+        [
+          13,
+          14,
+          1,
+          366,
+          1,
+          8,
+          2,
+          24
+        ],
+        [
+          40,
+          30,
+          18,
+          7,
+          53,
+          6,
+          4,
+          42
+        ],
+        [
+          0,
+          13,
+          1,
+          7,
+          0,
+          61,
+          1,
+          7
+        ],
+        [
+          11,
+          7,
+          2,
+          12,
+          0,
+          17,
+          81,
+          30
+        ],
+        [
+          21,
+          1,
+          29,
+          0,
+          0,
+          1,
+          0,
+          108
+        ]
+      ]
+    },
+    "majority_class": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 999
+        },
+        "transfers_payments": {
+          "precision": 0.27471839799749687,
+          "recall": 1.0,
+          "f1": 0.43102601865488466,
+          "support": 878
+        },
+        "account_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 280
+        },
+        "fees_charges": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 429
+        },
+        "fraud_security": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 200
+        },
+        "loans_credit": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 90
+        },
+        "disputes_refunds": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 160
+        },
+        "other": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 160
+        }
+      },
+      "macro_f1": 0.05387825233186058,
+      "accuracy": 0.27471839799749687,
+      "n": 3196,
+      "confusion": [
+        [
+          0,
+          999,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          878,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          280,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          429,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          200,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          90,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          160,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          160,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "accuracy_by_source": {
+    "banking77_test": {
+      "n": 3076,
+      "accuracy": 0.9652145643693107,
+      "predicted": {
+        "card_issues": 1009,
+        "fees_charges": 391,
+        "transfers_payments": 854,
+        "disputes_refunds": 162,
+        "fraud_security": 203,
+        "account_access": 285,
+        "loans_credit": 5,
+        "other": 167
+      }
+    },
+    "synth_fees_control": {
+      "n": 30,
+      "accuracy": 0.8666666666666667,
+      "predicted": {
+        "fees_charges": 26,
+        "loans_credit": 4
+      }
+    },
+    "synth_loans_credit": {
+      "n": 90,
+      "accuracy": 0.9,
+      "predicted": {
+        "loans_credit": 81,
+        "transfers_payments": 4,
+        "fees_charges": 3,
+        "disputes_refunds": 2
+      }
+    }
+  },
+  "serving": {
+    "n": 300,
+    "median_ms": 1.7728564998833463,
+    "p95_ms": 2.5079678096517455,
+    "cpu_seconds_per_1000": 1.8468277033334366
+  },
+  "split_sizes": {
+    "train": 8822,
+    "val": 1569,
+    "test": 3196
+  }
+}

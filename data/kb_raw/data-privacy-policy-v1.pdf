@@ -1,0 +1,66 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 260 >>
+stream
+BT /F1 9 Tf 50 800 Td (Northwind Pay - Internal - Confidential) Tj ET
+BT /F1 11 Tf 50 760 Td (Data and Privacy Policy) Tj ET
+BT /F1 11 Tf 50 738 Td (Version 1) Tj ET
+BT /F1 11 Tf 50 716 Td (Effective: 2025-09-01) Tj ET
+BT /F1 9 Tf 270 40 Td (Page 1 of 3) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 6 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 415 >>
+stream
+BT /F1 9 Tf 50 800 Td (Northwind Pay - Internal - Confidential) Tj ET
+BT /F1 11 Tf 50 760 Td () Tj ET
+BT /F1 11 Tf 50 738 Td (What an agent may see: the last 4 digits of a card or account number, the customer ID and ticket history.) Tj ET
+BT /F1 11 Tf 50 716 Td (Customer-facing drafts must not include full card or account numbers, home addresses or dates of birth.) Tj ET
+BT /F1 9 Tf 270 40 Td (Page 2 of 3) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 8 0 R /Resources << /Font << /F1 9 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 426 >>
+stream
+BT /F1 9 Tf 50 800 Td (Northwind Pay - Internal - Confidential) Tj ET
+BT /F1 11 Tf 50 760 Td (Agents must not copy customer names or ticket text into notes, memory or external tools.) Tj ET
+BT /F1 11 Tf 50 738 Td (Customer history kept for assistance expires after 90 days.) Tj ET
+BT /F1 11 Tf 50 716 Td (Any request to export customer data goes to the Data Protection Officer.) Tj ET
+BT /F1 9 Tf 270 40 Td (Page 3 of 3) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000564 00000 n 
+0000000690 00000 n 
+0000001156 00000 n 
+0000001282 00000 n 
+0000001759 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+1829
+%%EOF

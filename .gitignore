@@ -29,3 +29,5 @@ traces/
 
 # Mock API runtime data
 data/notes.jsonl
+data/index/
+data/memory.jsonl

@@ -1,0 +1,8 @@
+Title: Escalation Policy
+Version: 1
+Effective: 2026-01-15
+
+P1 (platform outage): page the on-call engineer immediately. If it is unresolved after 30 minutes, page the Head of Operations.
+P2 (degraded service): page the on-call engineer within 1 hour during business hours.
+P3 (normal): no paging; handle in the queue.
+Fraud cases: escalate to the Fraud Team lead within 1 hour of a confirmed account takeover.

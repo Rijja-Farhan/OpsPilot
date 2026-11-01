@@ -6,6 +6,7 @@ import sys
 from mcp import MCPError
 
 from opspilot import agent, policies, tickets
+from opspilot.memory import Memory
 from opspilot.mcp_client import open_toolbox
 from opspilot.router import Route, route
 
@@ -43,8 +44,18 @@ def dispatch(question: str, r: Route | None = None) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="opspilot", description="OpsPilot assistant")
-    parser.add_argument("question", help="e.g. 'show ticket T-1001' or 'how long to file a dispute?'")
+    parser.add_argument("question", nargs="?", help="e.g. 'show ticket T-1001' or 'how long to file a dispute?'")
+    parser.add_argument("--forget", metavar="CUSTOMER_ID", help="delete everything remembered about a customer, then exit")
+    parser.add_argument("--show-memory", metavar="CUSTOMER_ID", help="print what is remembered about a customer, then exit")
     args = parser.parse_args(argv)
+    if args.forget:
+        print(f"Forgot {Memory().forget(args.forget)} entries for {args.forget.upper()}.")
+        return 0
+    if args.show_memory:
+        print(Memory().block_for([args.show_memory.upper()]) or f"Nothing remembered about {args.show_memory.upper()}.")
+        return 0
+    if not args.question:
+        parser.error("a question is required (or use --forget / --show-memory)")
     try:
         print(dispatch(args.question))
     except ValueError as e:  # bad configuration, e.g. unknown LLM_PROVIDER

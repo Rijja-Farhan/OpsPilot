@@ -1,0 +1,14 @@
+{"a": "data/kb_raw/dispute-refund-policy-v3.md", "b": "data/kb_raw/dispute-refund-policy-v3-copy.md", "duplicate": true, "exempt_by_version": false}
+{"a": "data/kb_raw/dispute-refund-policy-v3.md", "b": "data/kb_raw/dispute-refund-policy-v3-reformatted.md", "duplicate": true, "exempt_by_version": false}
+{"a": "data/kb_raw/dispute-refund-policy-v3.md", "b": "data/kb_raw/dispute-refund-policy-v3-wiki-export.txt", "duplicate": true, "exempt_by_version": false}
+{"a": "data/kb_raw/fees-schedule-v2.md", "b": "data/kb_raw/fees-schedule-v2-reformatted.md", "duplicate": true, "exempt_by_version": false}
+{"a": "data/kb_raw/fraud-policy-v1.md", "b": "data/kb_raw/fraud-policy-v1-copy.md", "duplicate": true, "exempt_by_version": false}
+{"a": "data/kb_raw/dispute-refund-policy-v3.md", "b": "data/kb_raw/fees-schedule-v2.md", "duplicate": false, "exempt_by_version": false}
+{"a": "data/kb_raw/dispute-refund-policy-v3.md", "b": "data/kb_raw/fraud-policy-v1.md", "duplicate": false, "exempt_by_version": false}
+{"a": "data/kb_raw/escalation-policy-v1.txt", "b": "data/kb_raw/fraud-policy-v1.md", "duplicate": false, "exempt_by_version": false}
+{"a": "data/kb_raw/card-replacement-guide.md", "b": "data/kb_raw/fees-schedule-v2.md", "duplicate": false, "exempt_by_version": false}
+{"a": "data/kb_raw/dispute-refund-policy-v3-wiki-export.txt", "b": "data/kb_raw/disputes-faq.md", "duplicate": false, "exempt_by_version": false}
+{"a": "data/kb_raw/dispute-refund-policy-v1.md", "b": "data/kb_raw/dispute-refund-policy-v2.md", "duplicate": false, "exempt_by_version": true}
+{"a": "data/kb_raw/dispute-refund-policy-v2.md", "b": "data/kb_raw/dispute-refund-policy-v3.md", "duplicate": false, "exempt_by_version": true}
+{"a": "data/kb_raw/fees-schedule-v1.md", "b": "data/kb_raw/fees-schedule-v2.md", "duplicate": false, "exempt_by_version": true}
+{"a": "data/kb_raw/dispute-refund-policy-v3.md", "b": "data/kb_raw/dispute-refund-policy-v4-DRAFT.md", "duplicate": false, "exempt_by_version": true}

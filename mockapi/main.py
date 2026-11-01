@@ -130,7 +130,7 @@ def search_policies(query: str = Query(min_length=1, max_length=300), include_su
 
 @app.get("/policies/{slug}")
 def get_policy(slug: str):
-    for d in policies.load_docs():
-        if _slug(d) == slug:
-            return _policy_json(d, with_body=True)
+    doc = policies.get_doc(slug)
+    if doc is not None:
+        return _policy_json(doc, with_body=True)
     raise _error(404, "not_found", f"policy {slug} not found")

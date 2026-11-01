@@ -1,0 +1,244 @@
+{
+  "cost_latency": {
+    "llm_cost_per_1000_usd": 0.11701874999999999,
+    "hybrid_cost_per_1000_usd": 0.011701874999999999,
+    "llm_mean_prompt_tokens": 409.765,
+    "llm_mean_completion_tokens": 92.59,
+    "llm_latency_median_ms": 1754.794167005457,
+    "llm_latency_p95_ms": 4002.893504700477,
+    "clf_latency_median_ms": 1.7728564998833463,
+    "clf_latency_p95_ms": 2.5079678096517455,
+    "clf_cpu_seconds_per_1000": 1.8468277033334366,
+    "consistency_identical": 49,
+    "consistency_n": 50,
+    "llm_failures": 0,
+    "deferred_n": 20,
+    "deferred_share": 0.1,
+    "accuracy_on_deferred_classifier": 0.65,
+    "accuracy_on_deferred_llm": 0.5,
+    "model": "openai/gpt-oss-120b",
+    "price_source": "https://console.groq.com/docs/model/openai/gpt-oss-120b (read 2026-11-01)"
+  },
+  "results": {
+    "classifier (200)": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.8958333333333334,
+          "recall": 0.9148936170212766,
+          "f1": 0.9052631578947369,
+          "support": 47
+        },
+        "transfers_payments": {
+          "precision": 0.8888888888888888,
+          "recall": 0.9302325581395349,
+          "f1": 0.9090909090909091,
+          "support": 43
+        },
+        "account_access": {
+          "precision": 1.0,
+          "recall": 0.9523809523809523,
+          "f1": 0.975609756097561,
+          "support": 21
+        },
+        "fees_charges": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 26
+        },
+        "fraud_security": {
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714,
+          "support": 18
+        },
+        "loans_credit": {
+          "precision": 0.9166666666666666,
+          "recall": 0.8461538461538461,
+          "f1": 0.88,
+          "support": 13
+        },
+        "disputes_refunds": {
+          "precision": 0.9333333333333333,
+          "recall": 0.875,
+          "f1": 0.9032258064516129,
+          "support": 16
+        },
+        "other": {
+          "precision": 0.9411764705882353,
+          "recall": 1.0,
+          "f1": 0.9696969696969697,
+          "support": 16
+        }
+      },
+      "macro_f1": 0.9392893963325452,
+      "accuracy": 0.935,
+      "n": 200
+    },
+    "LLM (200)": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.8260869565217391,
+          "recall": 0.8085106382978723,
+          "f1": 0.8172043010752689,
+          "support": 47
+        },
+        "transfers_payments": {
+          "precision": 0.7551020408163265,
+          "recall": 0.8604651162790697,
+          "f1": 0.8043478260869565,
+          "support": 43
+        },
+        "account_access": {
+          "precision": 0.8076923076923077,
+          "recall": 1.0,
+          "f1": 0.8936170212765957,
+          "support": 21
+        },
+        "fees_charges": {
+          "precision": 0.7857142857142857,
+          "recall": 0.8461538461538461,
+          "f1": 0.8148148148148148,
+          "support": 26
+        },
+        "fraud_security": {
+          "precision": 0.8888888888888888,
+          "recall": 0.8888888888888888,
+          "f1": 0.8888888888888888,
+          "support": 18
+        },
+        "loans_credit": {
+          "precision": 1.0,
+          "recall": 0.46153846153846156,
+          "f1": 0.631578947368421,
+          "support": 13
+        },
+        "disputes_refunds": {
+          "precision": 0.7777777777777778,
+          "recall": 0.875,
+          "f1": 0.8235294117647058,
+          "support": 16
+        },
+        "other": {
+          "precision": 0.7777777777777778,
+          "recall": 0.4375,
+          "f1": 0.56,
+          "support": 16
+        }
+      },
+      "macro_f1": 0.7792476514094564,
+      "accuracy": 0.805,
+      "n": 200
+    },
+    "classifier (full test)": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.9663032705649157,
+          "recall": 0.975975975975976,
+          "f1": 0.9711155378486056,
+          "support": 999
+        },
+        "transfers_payments": {
+          "precision": 0.9696969696969697,
+          "recall": 0.9476082004555809,
+          "f1": 0.9585253456221198,
+          "support": 878
+        },
+        "account_access": {
+          "precision": 0.9789473684210527,
+          "recall": 0.9964285714285714,
+          "f1": 0.9876106194690265,
+          "support": 280
+        },
+        "fees_charges": {
+          "precision": 0.9714285714285714,
+          "recall": 0.951048951048951,
+          "f1": 0.9611307420494699,
+          "support": 429
+        },
+        "fraud_security": {
+          "precision": 0.9359605911330049,
+          "recall": 0.95,
+          "f1": 0.9429280397022333,
+          "support": 200
+        },
+        "loans_credit": {
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1": 0.9,
+          "support": 90
+        },
+        "disputes_refunds": {
+          "precision": 0.9390243902439024,
+          "recall": 0.9625,
+          "f1": 0.9506172839506173,
+          "support": 160
+        },
+        "other": {
+          "precision": 0.9401197604790419,
+          "recall": 0.98125,
+          "f1": 0.9602446483180428,
+          "support": 160
+        }
+      },
+      "macro_f1": 0.9540215271200144,
+      "accuracy": 0.9624530663329162,
+      "n": 3196
+    },
+    "classifier + LLM fallback (200)": {
+      "classes": {
+        "card_issues": {
+          "precision": 0.9148936170212766,
+          "recall": 0.9148936170212766,
+          "f1": 0.9148936170212766,
+          "support": 47
+        },
+        "transfers_payments": {
+          "precision": 0.8666666666666667,
+          "recall": 0.9069767441860465,
+          "f1": 0.8863636363636364,
+          "support": 43
+        },
+        "account_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 21
+        },
+        "fees_charges": {
+          "precision": 0.96,
+          "recall": 0.9230769230769231,
+          "f1": 0.9411764705882353,
+          "support": 26
+        },
+        "fraud_security": {
+          "precision": 0.8888888888888888,
+          "recall": 0.8888888888888888,
+          "f1": 0.8888888888888888,
+          "support": 18
+        },
+        "loans_credit": {
+          "precision": 1.0,
+          "recall": 0.7692307692307693,
+          "f1": 0.8695652173913043,
+          "support": 13
+        },
+        "disputes_refunds": {
+          "precision": 0.8333333333333334,
+          "recall": 0.9375,
+          "f1": 0.8823529411764706,
+          "support": 16
+        },
+        "other": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 16
+        }
+      },
+      "macro_f1": 0.9229050964287265,
+      "accuracy": 0.92,
+      "n": 200
+    }
+  }
+}

@@ -35,3 +35,18 @@ Live Groq run done on 2026-11-01 (14/15, see `docs/a1-eval.md`). Only Groq was t
 | Live answer quality | "why is T-1002 still open?" claimed "no action has been taken" from a null assignee; the data does not say that | Read the answer against the ticket | Open: not a tool problem; the prompt could say "state only what the tool results show" |
 | Live latency | Triage question took 22 to 44 s on Groq (`gpt-oss-120b` reasons before each tool call) | Timings in `evals/run_a3.py` output | Open: consider a smaller model for tool turns |
 | Test data | Live runs wrote a note to `data/notes.jsonl` (the real write path) | `ls data/` after the run | File is gitignored and deleted after runs; tests use a temp path |
+
+## A4 build (2026-11-01)
+| Where | What went wrong | How it was caught | Fix |
+|---|---|---|---|
+| `ingest/chunk.py` | A heading with no text under it (the `# Title (vN)` line) became its own chunk holding only the header and the title. These chunks ranked high for on-topic queries and crowded out the answer. My first retrieval grid was computed with this bug and pointed to dense retrieval | Rerunning the A1 live eval: the history question that A1 answered now returned "couldn't ground that answer"; I then looked at the retrieved text | Skip empty sections; regression tests (no chunk is only a heading, every real-corpus chunk has body text, history query retrieves the old value). Regrid: the winner changed to hybrid |
+| `ingest/dedupe.py` | Set `THRESHOLD = 0.6` before measuring, i.e. by feel, which the plan forbids; also 0.6 was above two labelled versions only by luck | Re-read the plan after computing pair scores | Threshold derived from labelled pairs (0.68) with a test that it sits in the gap |
+| `memory.py` | The "safe token" regex allowed only letters, so `p2` and `p3` were silently dropped and priority never reached memory | My own unit test for the run summary | Regex allows digits |
+| `evals/run_a4_stale.py` | Checker counted a correct answer as missing the current value because of formatting (`£750`, `1 %`) | Read the actual answers instead of trusting the flags | Normalise formats; three-way verdict (wrong, mixed, ok) |
+| Plan assumption | The plan assumed CFPB narratives are available. They are not (0 of 9,680 records, and the CSV has no narrative column) | Counted narratives before building on them | Documented deviation: LLM-written `loans_credit` data plus a control set; results carry a confound warning |
+| `tools/gen/make_messy_kb.py` | Claimed the generator is deterministic; the scanned PDF carried Pillow's current timestamp. My first fix crashed after the script had already deleted `data/kb_raw` | Hashing the output before and after regeneration; the crash was immediate | Fixed timestamp passed as `time.struct_time`; two regenerations give the same hash |
+| Threshold cost | Assumed a deferred ticket is resolved correctly by the LLM | Measured on the 200-ticket sample: LLM 50% vs classifier 65% on deferred tickets | Recommendation changed to human review; assumption stated in the metrics file |
+| `tests/test_classifier.py` | Two demo tickets (T-1198, T-1234) share text with Banking77 `test.csv` although the plan says demo tickets never appear in test | The leak test I wrote failed on the real data | Overlap pinned explicitly in the test; training side already excludes those texts |
+| `tests/test_memory.py` | A spy lambda used the wrong keyword name; one test had a dead `if False` branch and a meaningless assertion | Test failure; re-reading the file | Fixed and removed |
+
+Verified only on Groq (`openai/gpt-oss-120b`); the Gemini entry from A1 was not exercised.

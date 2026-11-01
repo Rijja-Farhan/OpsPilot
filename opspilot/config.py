@@ -12,6 +12,7 @@ CUSTOMERS_PATH = DATA_DIR / "customers.jsonl"
 TRANSACTIONS_PATH = DATA_DIR / "transactions.jsonl"
 NOTES_PATH = DATA_DIR / "notes.jsonl"  # runtime data written by the mock API; gitignored
 KB_DIR = DATA_DIR / "kb"
+INDEX_DIR = DATA_DIR / "index"
 
 # Model IDs are placeholders to verify against each provider's current model list
 # (Groq model must support JSON mode). Override per provider with <PROVIDER>_MODEL.

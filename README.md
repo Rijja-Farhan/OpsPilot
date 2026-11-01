@@ -13,7 +13,7 @@ An operations agent for Northwind Pay, a fictional digital bank (see `docs/domai
 | `mcp_server/` | MCP server wrapping the mock API: 6 tools, 1 resource |
 | `skills/` | Agent skills (`triage-ticket/SKILL.md`) |
 | `opspilot/` | The agent (see below) |
-| `ml/` | Ticket classifier and anomaly detector |
+| `ml/` | Classifier training, metrics and LLM comparison (anomaly detector comes later) |
 | `evals/` | Eval datasets and graders |
 | `tests/` | Unit and integration tests |
 
@@ -70,3 +70,12 @@ python tools/gen/make_customers.py          # regenerate customers and transacti
 - Traces go to `traces/llm_calls.jsonl` as plain JSONL; A5/A6 will want structure and IDs.
 - A3: the agent answers more than the tool results show (docs/a3-eval.md #1); a "state only what the tools returned" check belongs in the A6 evals.
 - A3: the mock API must be started by hand; a single dev command would help.
+
+## A4: data plumbing, memory, classifier
+```bash
+python tools/gen/make_messy_kb.py && python -m opspilot.ingest   # build data/kb_raw, then the indexes and docs/a4-ingest-report.md
+python evals/run_a4_retrieval.py                                   # chunking x retriever grid (docs/a4-retrieval-grid.md)
+python ml/train.py                                                 # classifier + baselines (docs/a4-classifier-metrics.md)
+python -m opspilot --show-memory C-17                              # what is remembered; --forget C-17 deletes it
+```
+Policy answers use the built index when `data/index/` exists, else the A1 BM25 over `data/kb/`. Results, deviations and the recommendation are in `docs/a4-eval.md`. Embeddings need a one-time model download (`EMBEDDINGS_PROVIDER=hash` avoids it for tests).

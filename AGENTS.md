@@ -22,7 +22,12 @@ OpsPilot: an operations agent. See `docs/domain.md` for the business context and
 - MCP server (stdio, normally launched by the agent): `.venv/bin/python -m mcp_server`
 - Generate customers and transactions: `.venv/bin/python tools/gen/make_customers.py`
 - Live tool run: `PYTHONPATH=. .venv/bin/python evals/run_a3.py`
+- Build the messy KB, then ingest and index it: `.venv/bin/python tools/gen/make_messy_kb.py && .venv/bin/python -m opspilot.ingest`
+- Retrieval eval, stale example (live): `.venv/bin/python evals/run_a4_retrieval.py`, `.venv/bin/python evals/run_a4_stale.py`
+- Classifier: `.venv/bin/python ml/train.py`, then `.venv/bin/python ml/compare_llm.py` (live)
+- Memory: `.venv/bin/python -m opspilot --show-memory C-17`, `--forget C-17`
 - Plain `openai` SDK only; no LangChain-style frameworks.
+- The train/val/test split in `data/splits/` is fixed; never regenerate it, never tune on the test set.
 - Tools return data or the error contract `{error: {code, message, retryable}}`; never raise from a tool. Writes are gated in `opspilot/agent.py`, not only in prompts.
 
 ## Do not

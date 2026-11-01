@@ -1,0 +1,20 @@
+{"id": 1, "type": "direct", "q": "How long do customers have to file a card dispute?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "90 days"}]}
+{"id": 2, "type": "direct", "q": "What is the international transfer fee?", "gold": [{"doc": "fees-schedule-v2", "must_contain": "2.50 GBP"}]}
+{"id": 3, "type": "direct", "q": "How fast must a P1 ticket get a first response?", "gold": [{"doc": "support-sla-v1", "must_contain": "15 minutes"}]}
+{"id": 4, "type": "direct", "q": "Who is paged first for a P1 incident?", "gold": [{"doc": "escalation-policy-v1", "must_contain": "on-call engineer"}]}
+{"id": 5, "type": "direct", "q": "Can agents put full card numbers in a draft reply to a customer?", "gold": [{"doc": "data-privacy-policy-v1", "must_contain": "must not include full card"}]}
+{"id": 6, "type": "direct", "q": "How long is a customer protected from liability for unauthorised transactions?", "gold": [{"doc": "fraud-policy-v1", "must_contain": "13 months"}]}
+{"id": 7, "type": "direct", "q": "How many days does a merchant have to respond to a dispute?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "15 days to respond"}]}
+{"id": 8, "type": "direct", "q": "What does a second replacement card cost within a year?", "gold": [{"doc": "fees-schedule-v2", "must_contain": "5.00 GBP"}]}
+{"id": 9, "type": "direct", "q": "When must a chargeback be raised?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "45 days"}]}
+{"id": 10, "type": "direct", "q": "What is the foreign exchange fee for card payments?", "gold": [{"doc": "fees-schedule-v2", "must_contain": "0.5%"}]}
+{"id": 11, "type": "stale", "q": "What is the dispute filing window?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "90 days"}], "stale_values": ["60 days", "120 days", "100 days", "45 days"]}
+{"id": 12, "type": "stale", "q": "How much provisional credit can be given on a card dispute?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "750 GBP"}], "stale_values": ["500 GBP", "250 GBP"]}
+{"id": 13, "type": "stale", "q": "How many business days until a merchant refund appears?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "5 business days"}], "stale_values": ["7 business days", "10 business days"]}
+{"id": 14, "type": "stale", "q": "What is the ATM withdrawal fee abroad?", "gold": [{"doc": "fees-schedule-v2", "must_contain": "1% of amount"}], "stale_values": ["2% of amount"]}
+{"id": 15, "type": "stale", "q": "How many days does a customer have to dispute a payment?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "90 days"}], "stale_values": ["60 days", "120 days", "100 days"]}
+{"id": 16, "type": "cross", "q": "A customer wants to dispute a 1,200 GBP card payment made 80 days ago. Can they, and how much provisional credit can we give?", "gold": [{"doc": "dispute-refund-policy-v3", "must_contain": "90 days"}, {"doc": "dispute-refund-policy-v3", "must_contain": "750 GBP"}]}
+{"id": 17, "type": "cross", "q": "For a P1 incident, what is the first-response target and who gets paged?", "gold": [{"doc": "support-sla-v1", "must_contain": "15 minutes"}, {"doc": "escalation-policy-v1", "must_contain": "on-call engineer"}]}
+{"id": 18, "type": "cross", "q": "How long is a fraud victim protected from liability, and how fast does the fraud team decide?", "gold": [{"doc": "fraud-policy-v1", "must_contain": "13 months"}, {"doc": "fraud-policy-v1", "must_contain": "10 business days"}]}
+{"id": 19, "type": "none", "q": "What is the monthly maintenance fee on the savings account?", "gold": []}
+{"id": 20, "type": "none", "q": "Does Northwind Pay offer mortgages?", "gold": []}
