@@ -13,6 +13,18 @@ TRANSACTIONS_PATH = DATA_DIR / "transactions.jsonl"
 NOTES_PATH = DATA_DIR / "notes.jsonl"  # runtime data written by the mock API; gitignored
 KB_DIR = DATA_DIR / "kb"
 INDEX_DIR = DATA_DIR / "index"
+RUNS_DIR = ROOT / "runs"                 # coworker checkpoints; gitignored (env OPSPILOT_RUNS_DIR overrides)
+RUN_TRACE_DIR = ROOT / "traces" / "runs"  # one JSONL per coworker run (env OPSPILOT_RUN_TRACE_DIR overrides)
+
+# Coworker budgets (spec-a5 'Harness'); changeable per run by passing a Budget.
+MAX_TOOL_CALLS = 12
+MAX_REFLECT_ROUNDS = 4
+MAX_TOKENS = 60_000
+MAX_SECONDS = 240.0  # live runs take 30 to 60 s; headroom for two 20 s rate-limit waits
+MAX_CALLS_PER_TOOL = 3
+# Placeholder USD per 1M (input, output) tokens, only for the report's cost estimate: verify against the provider's
+# pricing page before quoting it as a real figure.
+TOKEN_PRICE_PER_M = (0.15, 0.60)
 
 # Model IDs are placeholders to verify against each provider's current model list
 # (Groq model must support JSON mode). Override per provider with <PROVIDER>_MODEL.

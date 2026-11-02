@@ -10,7 +10,7 @@ An operations agent for Northwind Pay, a fictional digital bank (see `docs/domai
 | `data/` | `tickets.jsonl`, `customers.jsonl`, `transactions.jsonl` (generated), `kb/` policy docs; raw data is gitignored |
 | `tools/gen/` | Seeded scripts that build or ingest the data |
 | `mockapi/` | Mock REST API (tickets, customers, transactions, policies, notes) |
-| `mcp_server/` | MCP server wrapping the mock API: 6 tools, 1 resource |
+| `mcp_server/` | MCP server wrapping the mock API: 7 tools (incl. `classify_ticket`), 1 resource |
 | `skills/` | Agent skills (`triage-ticket/SKILL.md`) |
 | `opspilot/` | The agent (see below) |
 | `ml/` | Classifier training, metrics and LLM comparison (anomaly detector comes later) |
@@ -46,6 +46,18 @@ python evals/run_a3.py                                # live run; prints every t
 ```
 
 Free-text questions about a ticket or customer go through the tool-calling agent; bare lookups and policy questions keep the A1 paths. Set `OPSPILOT_API_URL` if the API is not on `127.0.0.1:8000`. `MOCKAPI_FAIL_RATE` and `MOCKAPI_LATENCY_MS` simulate a flaky upstream. Inspect the server with `npx @modelcontextprotocol/inspector .venv/bin/python -m mcp_server`.
+
+## Run (A5: coworker)
+
+```bash
+python -m uvicorn mockapi.main:app --port 8000                    # terminal 1
+python -m opspilot "investigate T-1002 and draft a resolution"    # plan, act, observe, reflect, verified report
+python -m opspilot --runs                                         # recent runs (checkpoints in runs/)
+python -m opspilot --resume RUN_ID                                # continue an interrupted run
+PYTHONPATH=. python evals/run_a5.py                               # the three live tasks
+```
+
+The coworker is read-only: writes are denied in code and listed as proposed actions. Traces: `traces/runs/<run_id>.jsonl`. Design: `docs/harness-a5.md`; real runs: `docs/a5-traces.md`; single vs multi-agent: `docs/a5-multi-agent.md`.
 
 ## Test and eval
 

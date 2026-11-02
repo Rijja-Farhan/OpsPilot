@@ -50,3 +50,16 @@ Live Groq run done on 2026-11-01 (14/15, see `docs/a1-eval.md`). Only Groq was t
 | `tests/test_memory.py` | A spy lambda used the wrong keyword name; one test had a dead `if False` branch and a meaningless assertion | Test failure; re-reading the file | Fixed and removed |
 
 Verified only on Groq (`openai/gpt-oss-120b`); the Gemini entry from A1 was not exercised.
+
+## A5 build (2026-11-01)
+| Where | What went wrong | How it was caught | Fix |
+|---|---|---|---|
+| `docs/spec-a5.md` | Wrote that Dispute and Refund Policy v2 is current; the A4 index has a v3 | Live run 2 cited v3, which verification accepted as current | Spec note and trace reading corrected; the check was right, my expectation was stale |
+| `coworker.py` live run | A Groq 429 in the 2nd ACT call ended the run as `model_error` with no detail and no list of unrun steps | Live run `12ed`, read the trace | `StopRun` detail, "Not completed" notes by code |
+| `coworker.py` re-run | The REPORT call hit a 429 and the run produced an empty fallback report. My `report_phase` edit had not applied (a dead `if draft is None` branch still referenced an undefined name), so the failure detail was blank | Live run `4036`; I read the code instead of trusting the green tests | Rewrote the branch; test for the persistent-rate-limit case |
+| `coworker.py` | 429 handling relied on `llm.complete`'s ~15 s backoff, shorter than the provider's window | Same runs | Harness-level model retry (2 x 20 s), 240 s time budget |
+| `trace.py` call | `event("start", phase=...)` collided with the positional `phase` argument | 16 of 17 new tests failed with `TypeError` | Renamed the field to `resume_phase` |
+| `tests/test_budget.py` | The time-budget test advanced the fake clock before the run began, so no time passed during it; the per-tool test used a summary naming IDs absent from its evidence, so verification (correctly) made it partial | Two failing tests, read each | Clock advanced inside the model call; summary text fixed |
+| `cli.py` | `--resume nope` started the tool server first and surfaced an `ExceptionGroup` instead of "No saved run" | `tests/test_cli.py` | State is loaded before the server starts |
+| Shell | `pkill -f "uvicorn mockapi"` matched my own command line and killed the shell | Exit code 144 | `pgrep -f "[u]vicorn ..."` |
+| Live runs | Groq rate-limited so heavily that the API-down case could not be run cleanly twice | Traces `0784` and `286b` | Reported as not fully verified live; offline tests cover retries |

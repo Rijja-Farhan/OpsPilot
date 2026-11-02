@@ -31,3 +31,4 @@ traces/
 data/notes.jsonl
 data/index/
 data/memory.jsonl
+runs/

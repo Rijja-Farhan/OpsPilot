@@ -1,0 +1,15 @@
+# Multi-agent or single agent? (A5)
+
+**Decision: one agent with explicit phases, plus a fresh-context verifier call (a second model call, not a second agent with tools).** In terms of the Week 3 workflow patterns, this is prompt chaining (PLAN, ACT, REFLECT, REPORT), with the routing already done by `router.py`; it uses no parallelism and no orchestrator-workers.
+
+## Why, using the measured runs (`docs/a5-traces.md`)
+- **The work is a dependency chain.** Ticket, then customer, then history, then policy: the customer ID comes from the ticket. Parallel workers would wait on the first call anyway. In the 5 to 6 tool calls per run, at most `get_customer`, `list_transactions` and `search_policies` could overlap after the ticket is read; at 0.03 to 0.5 s per tool call (trace `act`/`tool` events) that saves under 1 s of a 95 to 153 s run. The time is in model calls (2 to 45 s per phase), not tools.
+- **Cost scales with each agent's context.** A run used 14.7k to 28.9k tokens ($0.003 to $0.006 estimated). The verifier call alone was 1.2k to 2.5k prompt tokens and 0.3k to 0.45k completion tokens, 8 to 17% of a run, and 1.6 to 18.9 s. A planner, researcher and reviewer split would repeat the task and the shared evidence in each context; the evidence ledger (1.5k to 3k tokens) is the dominant repeated block, so I estimate roughly 1.5x to 2x tokens (about 25k to 55k, $0.005 to $0.012) and 2 to 3 more model calls of latency. This is an estimate from the measured block sizes; I did not build the split.
+- **Shared state is simple in one process.** The ledger is a list in one `RunState`. Across agents it would need a protocol and would add failure modes (stale copies, lost evidence IDs), and verification relies on every evidence ID resolving in one ledger.
+- **Where independence matters, the verifier call covers most of it.** The verifier sees only the findings and the cited evidence, not the plan or history. The code checks matter more than it does: in these runs the model check flagged one finding as `partly` and marked everything else `supported`, and the code checks never failed, so I have no run where either one caught a real bad claim. They are tested only on synthetic bad reports (`tests/test_verify.py`). That is a gap to close in A6, not a result.
+
+## What would change the answer
+1. **Scale:** tickets that need evidence from many independent sources (dozens of lookups), where parallel researchers cut wall-clock time.
+2. **Permission scopes:** an agent that may write (after approval, Week 4) alongside a read-only investigator; separate agents would give each its own tool allowlist.
+3. **A verifier that must not share a model or prompt with the writer**, if A6 shows the same-model check passes claims the code checks miss. The cheap first step is a different model for the verifier call, not a different agent.
+4. **Context pressure:** if ledgers grow past what one context holds well, a researcher agent that returns a distilled evidence set would earn its cost.

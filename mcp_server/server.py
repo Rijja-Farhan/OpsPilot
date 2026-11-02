@@ -1,4 +1,4 @@
-"""MCP server wrapping the mock API: six tools, one resource, one error contract.
+"""MCP server wrapping the mock API (plus the local classifier): seven tools, one resource, one error contract.
 
 No business logic lives here: validate input, call the API, map every failure to
 {"error": {"code", "message", "retryable"}}. A tool never raises and never returns a trace or raw HTTP body.
@@ -153,6 +153,21 @@ def build_server(client: httpx.AsyncClient | None = None) -> MCPServer:
         if not isinstance(query, str) or not query.strip() or len(query) > 300:
             return error("invalid_argument", "query must be 1 to 300 characters.")
         return await call("GET", "/policies", params={"query": query.strip(), "include_superseded": include_superseded})
+
+    @server.tool()
+    async def classify_ticket(text: Annotated[str, Field(description="The ticket subject and body to classify")]) -> dict:
+        """Classify ticket text into one of the 8 support categories with the trained classifier. Read-only. Returns
+        label, probability and whether the probability is below the deferral threshold (then a human should decide)."""
+        if not isinstance(text, str) or not text.strip():
+            return error("invalid_argument", "text must be a non-empty string.")
+        try:
+            from opspilot.classifier import Classifier  # lazy: scikit-learn is slow to import
+            clf = Classifier.load()
+        except (OSError, ImportError, KeyError, EOFError, ValueError):
+            return error("model_unavailable", "The ticket classifier is not available (run ml/train.py).")
+        p = clf.predict(text[:MAX_TEXT])
+        return {"label": p.label, "probability": round(p.probability, 3), "deferred": p.deferred,
+                "threshold": clf.threshold}
 
     @server.tool()
     async def add_ticket_note(

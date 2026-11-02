@@ -26,9 +26,10 @@ OpsPilot: an operations agent. See `docs/domain.md` for the business context and
 - Retrieval eval, stale example (live): `.venv/bin/python evals/run_a4_retrieval.py`, `.venv/bin/python evals/run_a4_stale.py`
 - Classifier: `.venv/bin/python ml/train.py`, then `.venv/bin/python ml/compare_llm.py` (live)
 - Memory: `.venv/bin/python -m opspilot --show-memory C-17`, `--forget C-17`
+- Coworker: `.venv/bin/python -m opspilot "investigate T-1002"`, `--runs`, `--resume RUN_ID`; live tasks: `PYTHONPATH=. .venv/bin/python evals/run_a5.py`
 - Plain `openai` SDK only; no LangChain-style frameworks.
 - The train/val/test split in `data/splits/` is fixed; never regenerate it, never tune on the test set.
-- Tools return data or the error contract `{error: {code, message, retryable}}`; never raise from a tool. Writes are gated in `opspilot/agent.py`, not only in prompts.
+- Tools return data or the error contract `{error: {code, message, retryable}}`; never raise from a tool. Writes are gated in `opspilot/agent.py` (assistant) and denied in `opspilot/coworker.py` (coworker), not only in prompts.
 
 ## Do not
 - Commit `.venv/`, `.env`, or generated raw data.

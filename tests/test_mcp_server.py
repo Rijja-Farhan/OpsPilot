@@ -9,7 +9,8 @@ from mcp import Client
 from mcp_server.server import MAX_NOTE, build_server
 from mockapi.main import app
 
-TOOLS = {"get_ticket", "search_tickets", "get_customer", "list_transactions", "search_policies", "add_ticket_note"}
+TOOLS = {"get_ticket", "search_tickets", "get_customer", "list_transactions", "search_policies", "add_ticket_note",
+         "classify_ticket"}
 
 
 @pytest.fixture(autouse=True)

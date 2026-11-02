@@ -64,3 +64,14 @@ def test_main_bad_provider_exit_code(monkeypatch, capsys):
 def test_main_prints_json(capsys):
     assert main(["show ticket T-1001"]) == 0
     assert json.loads(capsys.readouterr().out)["ticket_id"] == "T-1001"
+
+
+def test_investigate_goes_to_the_coworker(monkeypatch):
+    asked = []
+    monkeypatch.setattr("opspilot.cli._run_coworker", lambda q, t: asked.append((q, t)) or "report")
+    assert dispatch("investigate T-1002") == "report" and asked == [("investigate T-1002", "T-1002")]
+
+
+def test_runs_and_resume_flags(capsys, monkeypatch):
+    assert main(["--runs"]) == 0 and "No saved runs." in capsys.readouterr().out
+    assert main(["--resume", "nope"]) == 0 and "No saved run" in capsys.readouterr().out

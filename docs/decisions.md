@@ -45,3 +45,12 @@ Episodic entries are written by code, not by the model, from enumerated fields o
 - **Split fixed once** (`data/splits/`, checksums, script refuses to overwrite). Test = Banking77 `test.csv` + held-out topics. A train text that also occurs in `test.csv` is dropped from training (25 rows).
 - **Threshold 0.7** from a validation cost table (wrong 1, missed fraud 5, deferral 0.3). The deferral cost assumed the LLM resolves deferred tickets; measurement showed it does worse than the classifier on them (50% vs 65%, n = 20).
 - **Recommendation:** classifier first, low-confidence tickets to human review, not to the LLM, until a few-shot prompt is shown to beat the classifier on the deferred subset. The classifier as an agent tool belongs to A5.
+
+## 2026-11-01: A5 coworker harness (docs/spec-a5.md, docs/harness-a5.md)
+- **Writes: deny, then propose, versus an approval prompt.** The coworker never executes a write; `add_ticket_note` is denied in code and the report lists it under `proposed_actions`. An approval prompt would let a run end with an action taken, which "report for human review" excludes, and approval flows are Week 4. Cost: a human performs the note themselves.
+- **`tools=` and `schema=` stay in separate phases.** Probed on Groq: a request with both fails with HTTP 400 ("json mode cannot be combined with tool/function calling"). PLAN, REFLECT, REPORT and the verifier use `schema=`; ACT uses `tools=`.
+- **Checkpoint per tool call and per phase, not per phase only.** A crash mid-ACT then loses at most the call in flight. Cost: one atomic file rewrite per call (a few KB).
+- **Classifier is an MCP tool (`classify_ticket`)**, so the trace shows it as an ordinary step. Side effect: the A3 assistant agent also sees it. Cost: the model decides what text to pass; the verifier checks the label and probability against the tool result, not that the text matched the ticket.
+- **Code decides verification; the model check is advisory.** Report fields `status`, `stop_reason`, `verification`, `budget_used` are written by code.
+- **Rate limits are retried by the harness (2 x 20 s), counted by the wall-clock budget.** `llm.complete` waits only ~15 s, shorter than Groq's window. The time budget went from the planned 120 s to 240 s after live runs showed 95 to 153 s with waits.
+- **A repair round, then strip.** One regeneration with the specific failures; a second failure removes the unsupported findings into `open_questions` and gives `partial`, so a bad claim is never shown as a finding.

@@ -42,3 +42,18 @@ def test_llm_intent_failure_is_error_route():
     fake_llm.queue_responses("x", "y")
     r = route("anything")
     assert r.kind == "error" and r.error == "invalid_output"
+
+
+@pytest.mark.parametrize("q", ["investigate T-1002", "Investigate ticket T-1002 and draft a resolution with evidence",
+                               "look into T-1002", "what is the root cause of T-1002?", "draft a resolution for T-1002"])
+def test_investigate_route(q):
+    fake_llm.queue_responses("SHOULD NOT BE CONSUMED")
+    r = route(q)
+    assert r.kind == "investigate" and r.ticket_id == "T-1002"
+    assert fake_llm._queue == ["SHOULD NOT BE CONSUMED"]
+
+
+def test_existing_ticket_routes_are_unchanged():
+    assert route("show ticket T-1001").kind == "ticket_lookup"
+    assert route("why is T-1042 still open?").kind == "ticket_question"
+    assert route("investigate C-17").kind == "customer_question"  # needs a ticket ID to be a coworker task
