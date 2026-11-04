@@ -59,6 +59,18 @@ PYTHONPATH=. python evals/run_a5.py                               # the three li
 
 The coworker is read-only: writes are denied in code and listed as proposed actions. Traces: `traces/runs/<run_id>.jsonl`. Design: `docs/harness-a5.md`; real runs: `docs/a5-traces.md`; single vs multi-agent: `docs/a5-multi-agent.md`.
 
+## Evals (A6)
+```bash
+LLM_PROVIDER=fake python -m pytest -q                                   # includes the offline eval cases, grader and trajectory tests
+python evals/run_a6.py --offline --label local                          # the cases that need no model
+PYTHONPATH=. python evals/run_a6.py --label baseline                    # all 45 cases, live (mock API on :8000)
+python evals/run_a6.py --rerun evals/results/FILE.jsonl --times 3       # flaky vs consistent failures
+python evals/run_a6.py --compare BEFORE.jsonl AFTER.jsonl               # before/after, dev vs held-out
+python ml/a6_classifier.py                                              # held-out report, cost table, threshold (live LLM, cached)
+python evals/reward.py                                                  # reward-hacking demo (no model)
+```
+45 cases in `evals/cases/` (spec: `docs/spec-a6.md`), 14 held out. Results go to `evals/results/` (gitignored). Write-up: `docs/a6-eval.md`, `docs/a6-classifier.md`, `docs/a6-judge-calibration.md`, `docs/a6-reward-design.md`.
+
 ## Test and eval
 
 ```bash

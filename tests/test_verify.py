@@ -111,3 +111,50 @@ def test_model_check_is_advisory_only():
     fake_llm.queue_responses(plan(), tool("get_ticket", ticket_id="T-1002"), "DONE", "DONE", reflect(), report(), checks("unsupported"))
     r = investigate()
     assert r.status == "complete" and r.verification.model_check == ["finding 1: unsupported"]
+
+
+# ---- A6 baseline findings -------------------------------------------------------------------------------------------
+
+def _draft(**kw):
+    from opspilot.schemas import ReportDraft
+    base = dict(ticket_id="T-1", summary="s", findings=[], policy_citations=[], proposed_resolution="r")
+    return ReportDraft(**{**base, **kw})
+
+
+def test_action_claims_now_cover_freezes_and_blocks():
+    from opspilot.verify import find_action_claim
+    for bad in ("We've placed a freeze on your card as you requested.", "We froze the card.", "I have flagged the account.",
+                "A freeze has been placed on the card.", "We've contacted the merchant."):
+        assert find_action_claim(bad), bad
+    for ok in ("We will place a freeze once a human approves.", "Verify whether a refund has been issued for the transaction.",
+               "If the merchant has issued the refund, close the ticket.", "A human could place a freeze.",
+               "Check if a freeze has been placed.", "The customer asked us to put a freeze on the card."):
+        assert find_action_claim(ok) is None, ok
+
+
+def test_category_from_a_deferred_classifier_result_is_rejected():
+    from opspilot.schemas import CategoryResult
+    from opspilot.verify import check_report
+    ledger = [{"id": "E1", "tool": "get_ticket", "ok": True, "arguments": {}, "result": {"ticket_id": "T-1", "category": "other"}},
+              {"id": "E2", "tool": "classify_ticket", "ok": True, "arguments": {},
+               "result": {"label": "fraud_security", "probability": 0.39, "deferred": True}}]
+    bad = _draft(category=CategoryResult(label="fraud_security", classifier_label="fraud_security", probability=0.39, evidence_ids=["E2"]))
+    failures = check_report(bad, ledger, "investigate T-1", "complete", "enough")
+    assert [f.check for f in failures] == ["category_source"] and failures[0].target == "category"
+    good = _draft(category=CategoryResult(label="other", evidence_ids=["E1"]))
+    assert check_report(good, ledger, "investigate T-1", "complete", "enough") == []
+    confident = [dict(ledger[0]), {**ledger[1], "result": {"label": "fraud_security", "probability": 0.9, "deferred": False}}]
+    ok = _draft(category=CategoryResult(label="fraud_security", classifier_label="fraud_security", probability=0.9, evidence_ids=["E2"]))
+    assert check_report(ok, confident, "investigate T-1", "complete", "enough") == []   # a confident classifier result is allowed
+
+
+def test_policy_citation_for_a_missing_ticket_is_rejected():
+    from opspilot.schemas import Citation
+    from opspilot.verify import check_report
+    ledger = [{"id": "E1", "tool": "get_ticket", "ok": False, "arguments": {}, "result": {"error": {"code": "not_found", "message": "x", "retryable": False}}},
+              {"id": "E2", "tool": "search_policies", "ok": True, "arguments": {},
+               "result": {"policies": [{"title": "Fees Schedule", "version": 2, "effective_date": "2026-03-01", "status": "current"}]}}]
+    cite = Citation(title="Fees Schedule", version=2, effective_date="2026-03-01")
+    failures = check_report(_draft(policy_citations=[cite]), ledger, "investigate T-9", "partial", "no_progress")
+    assert [f.check for f in failures] == ["missing_ticket"]
+    assert check_report(_draft(), ledger, "investigate T-9", "partial", "no_progress") == []

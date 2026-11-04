@@ -184,7 +184,8 @@ class Coworker:
             result = await self.toolbox.call(name, args)
             err = result.get("error")
             self.trace.event("act", kind="tool", tool=name, args=args, attempt=attempt + 1, ok=err is None,
-                             error=err["code"] if err else None, latency_ms=round((time.perf_counter() - start) * 1000),
+                             error=err["code"] if err else None, retryable=bool(err and err.get("retryable")),
+                             latency_ms=round((time.perf_counter() - start) * 1000),
                              budget_left=self.budget.left())
             if not (err and err.get("retryable")):
                 break

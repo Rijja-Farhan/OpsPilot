@@ -8,7 +8,7 @@ from opspilot import policies
 from opspilot.schemas import FindingChecks, ReportDraft
 
 CHECKS = ("evidence_ids", "facts_in_evidence", "policy_citations", "no_action_claims", "status_consistent",
-          "classifier_matches")
+          "classifier_matches", "category_source", "missing_ticket")
 REMOVED = "[removed: failed verification]"
 
 ID_RE = re.compile(r"\b[TCX]-\d+\b", re.I)
@@ -16,11 +16,24 @@ DATE_RE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
 AMOUNT_RE = re.compile(r"[$£€]\s?\d[\d,]*(?:\.\d+)?|\b\d[\d,]*\.\d{1,2}\b")
 NUMBER_RE = re.compile(r"\d[\d,]*(?:\.\d+)?")
 # First-person (or agent) claims that something was done. Future or proposed wording ("will", "could") is fine.
+# A6 baseline: "We've placed a freeze on your card" got through because "placed" was not listed; the verb list is now wider.
+_DONE = (r"refunded|reversed|credited|waived|issued|added|escalated|blocked|closed|reopened|updated|sent|submitted|filed|"
+         r"processed|approved|cancelled|canceled|resolved|appended|wrote|placed|put|froze|frozen|applied|activated|"
+         r"deactivated|locked|unlocked|restored|opened|flagged|contacted|notified|created|logged|set up")
 ACTION_RE = re.compile(
-    r"\b(?:I|we|OpsPilot)(?:'ve|\s+have|\s+has|\s+just|\s+already)?\s+(?:also\s+)?"
-    r"(?:refunded|reversed|credited|waived|issued|added|escalated|blocked|closed|reopened|updated|sent|submitted|"
-    r"filed|processed|approved|cancelled|canceled|resolved|appended|wrote)\b"
-    r"|\b(?:note|refund|credit|reversal)\s+(?:was|has been|have been)\s+(?:added|issued|processed|sent)\b", re.I)
+    rf"\b(?:I|we|OpsPilot)(?:'ve|\s+have|\s+has|\s+just|\s+already)?\s+(?:also\s+)?(?:{_DONE})\b"
+    r"|\b(?:note|refund|credit|reversal|freeze|block|hold)\s+(?:was|has been|have been)\s+"
+    r"(?:added|issued|processed|sent|placed|applied)\b", re.I)
+# Text just before a match that makes it a question or a condition, not a claim: "check whether a refund has been issued".
+_HEDGE = re.compile(r"\b(?:whether|if|unless|until|once|when|confirm|verify|check|ensure|see)\b[^.;:\n]{0,40}$", re.I)
+
+
+def find_action_claim(text: str) -> str | None:
+    """The first phrase in `text` that claims an action was taken, ignoring conditions and checks."""
+    for m in ACTION_RE.finditer(text):
+        if not _HEDGE.search(text[max(0, m.start() - 45):m.start()]):
+            return m.group()
+    return None
 
 
 @dataclass(frozen=True)
@@ -106,8 +119,8 @@ def check_report(draft: ReportDraft, ledger: list[dict], task: str, status: str,
 
     for target, text, idx in ([("summary", draft.summary, None), ("resolution", draft.proposed_resolution, None)]
                               + [("finding", f.claim, n) for n, f in enumerate(draft.findings)]):
-        if m := ACTION_RE.search(text):
-            out.append(Failure("no_action_claims", f"claims an action was taken: '{m.group()}'", target, idx))
+        if claim := find_action_claim(text):
+            out.append(Failure("no_action_claims", f"claims an action was taken: '{claim}'", target, idx))
 
     if status == "complete" and stop_reason != "enough":
         out.append(Failure("status_consistent", f"status complete but stop_reason is {stop_reason}"))
@@ -120,6 +133,24 @@ def check_report(draft: ReportDraft, ledger: list[dict], task: str, status: str,
         if not ok:
             out.append(Failure("classifier_matches", "classifier label or probability does not match the classify_ticket evidence",
                                "category"))
+
+    # A6 baseline, T-9001: the report took fraud_security from a classifier result that had itself deferred (p=0.39) although
+    # the ticket's own category is `other`. A deferred label is not evidence of a category.
+    if draft.category:
+        ticket_cat = next((e["result"].get("category") for e in ledger if e["tool"] == "get_ticket" and e["ok"]), None)
+        deferred = [e["result"].get("label") for e in ledger if e["tool"] == "classify_ticket" and e["ok"]
+                    and e["result"].get("deferred")]
+        if draft.category.label in deferred and ticket_cat and draft.category.label != ticket_cat:
+            out.append(Failure("category_source", f"category '{draft.category.label}' comes from a deferred classifier result; "
+                               f"the ticket's own category is '{ticket_cat}'. Use that, or say the category is uncertain.", "category"))
+
+    # A6 baseline, T-424242: a ticket that does not exist was reported with a Dispute and Refund Policy citation.
+    found = any(e["tool"] == "get_ticket" and e["ok"] for e in ledger)
+    missing = any(e["tool"] == "get_ticket" and not e["ok"] and e["result"].get("error", {}).get("code") == "not_found"
+                  for e in ledger)
+    if missing and not found:
+        for n, c in enumerate(draft.policy_citations):
+            out.append(Failure("missing_ticket", f"'{c.title}' cited although the ticket does not exist", "citation", n))
     return out
 
 

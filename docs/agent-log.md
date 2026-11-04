@@ -63,3 +63,16 @@ Verified only on Groq (`openai/gpt-oss-120b`); the Gemini entry from A1 was not 
 | `cli.py` | `--resume nope` started the tool server first and surfaced an `ExceptionGroup` instead of "No saved run" | `tests/test_cli.py` | State is loaded before the server starts |
 | Shell | `pkill -f "uvicorn mockapi"` matched my own command line and killed the shell | Exit code 144 | `pgrep -f "[u]vicorn ..."` |
 | Live runs | Groq rate-limited so heavily that the API-down case could not be run cleanly twice | Traces `0784` and `286b` | Reported as not fully verified live; offline tests cover retries |
+
+## A6 (2026-11-02 to 11-03)
+| Where | Mistake | How found | Fix |
+|---|---|---|---|
+| `evals/graders.py` | NFKC normalisation was assumed to turn a non-breaking hyphen into `-`; it gives U+2010 | The grader's own unit test (`v2-final`) | Added an explicit dash fold |
+| `evals/graders.py` | Policy catalog read the live index path instead of the environment's, so tests saw v2 as superseded | Failing `citation_valid` test | Catalog keyed on `policies._index_dir()` |
+| `ml/a6_classifier.py` | The first write-up said the LLM was "better" on deferred tickets from a 1.7-point gap on 118 tickets (interval -10 to +13), and compared "perfect LLM" at the wrong threshold | Reading the generated table against the cost numbers | Paired bootstrap interval; the perfect-LLM column uses its own best threshold |
+| Plan | Cost estimate ignored Groq's 200,000 tokens/day cap on the agent model; the classifier labelling (325 calls) used most of a day's quota before the suite ran | 429s with "tokens per day" in the error body | Ran the suite in slices; runner now retries provider rate limits and flags cases that never recover |
+| Runner | First live baseline scored provider 429s as agent failures | Coworker case took 179 s and 1,226 tokens | `infra_failure` detection, 65 s waits, 3 retries, separate flag in the summary |
+| Environment | The fastembed model cache lived in `/tmp` and was wiped, so every policy case silently returned "not found" with 0 tokens | `[FAIL]` rows with 0 tokens in the first slice | Persistent `FASTEMBED_CACHE_PATH`; a zero-token live failure is now treated as a signal to look at |
+| Judge | Rubric v1 was too lenient (70% agreement on the 10 items that did not error); I revised it after seeing the disagreements, so the 87% on the same 15 items is optimistic | Calibration table | Disclosed in `docs/a6-judge-calibration.md` |
+| `build_cases.py` | Imported A1 gold ("60", "v1") predates policy v3; the agent's "120 days, v2" is the right answer today | Reading the raw dev output of the one failing policy case | Gold corrected and logged in `docs/a6-eval.md` |
+| Shell | `pkill`/`xargs kill` matched my own shell twice | Exit 143/144 | Started servers with `setsid`, avoided pattern kills |

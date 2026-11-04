@@ -1,0 +1,481 @@
+{
+  "measured_deferred_accuracy": {
+    "a4_threshold": 0.7,
+    "n_deferred": 118,
+    "n_llm_failed": 0,
+    "classifier_accuracy_on_deferred": 0.6271186440677966,
+    "llm_accuracy_on_deferred": 0.6440677966101694,
+    "fraud_among_deferred": 15,
+    "diff": 0.01694915254237288,
+    "diff_ci": [
+      -0.1016949152542373,
+      0.1271186440677966
+    ],
+    "llm_better": false
+  },
+  "best_by_ratio": {
+    "2.0": {
+      "threshold_only": {
+        "t": 0.3,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.0490121096239643,
+        "deferred_share": 0.0019120458891013384,
+        "accuracy": 0.9566602931803697
+      },
+      "with_fraud_alert": {
+        "t": 0.3,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.0490121096239643,
+        "deferred_share": 0.0019120458891013384,
+        "accuracy": 0.9566602931803697
+      },
+      "never_defer": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.0497131931166348,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      },
+      "a4_threshold_measured_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.06972594008922868,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9566602931803697
+      },
+      "perfect_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.039770554493307776,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9834289356277884
+      },
+      "human_0.5": {
+        "t": 0.3,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.049394518801784575,
+        "deferred_share": 0.0019120458891013384,
+        "accuracy": 0.9566602931803697
+      },
+      "human_1.0": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 2.0,
+        "cost": 0.0497131931166348,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      }
+    },
+    "5.0": {
+      "threshold_only": {
+        "t": 0.3,
+        "alert": null,
+        "ratio": 5.0,
+        "cost": 0.05857233906947099,
+        "deferred_share": 0.0019120458891013384,
+        "accuracy": 0.9566602931803697
+      },
+      "with_fraud_alert": {
+        "t": 0.3,
+        "alert": 0.2,
+        "ratio": 5.0,
+        "cost": 0.05768005098789037,
+        "deferred_share": 0.009560229445506692,
+        "accuracy": 0.9572976418100702
+      },
+      "never_defer": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 5.0,
+        "cost": 0.05927342256214149,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      },
+      "a4_threshold_measured_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 5.0,
+        "cost": 0.07928616953473534,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9566602931803697
+      },
+      "perfect_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 5.0,
+        "cost": 0.039770554493307776,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9834289356277884
+      },
+      "human_0.5": {
+        "t": 0.55,
+        "alert": null,
+        "ratio": 5.0,
+        "cost": 0.0538559592096877,
+        "deferred_share": 0.03505417463352454,
+        "accuracy": 0.9700446144040791
+      },
+      "human_1.0": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 5.0,
+        "cost": 0.05927342256214149,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      }
+    },
+    "10.0": {
+      "threshold_only": {
+        "t": 0.3,
+        "alert": null,
+        "ratio": 10.0,
+        "cost": 0.07450605481198215,
+        "deferred_share": 0.0019120458891013384,
+        "accuracy": 0.9566602931803697
+      },
+      "with_fraud_alert": {
+        "t": 0.3,
+        "alert": 0.2,
+        "ratio": 10.0,
+        "cost": 0.07042702358189928,
+        "deferred_share": 0.009560229445506692,
+        "accuracy": 0.9572976418100702
+      },
+      "never_defer": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 10.0,
+        "cost": 0.07520713830465264,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      },
+      "a4_threshold_measured_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 10.0,
+        "cost": 0.09521988527724667,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9566602931803697
+      },
+      "perfect_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 10.0,
+        "cost": 0.039770554493307776,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9834289356277884
+      },
+      "human_0.5": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 10.0,
+        "cost": 0.05481198215423837,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9834289356277884
+      },
+      "human_1.0": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 10.0,
+        "cost": 0.07520713830465264,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      }
+    },
+    "20.0": {
+      "threshold_only": {
+        "t": 0.55,
+        "alert": null,
+        "ratio": 20.0,
+        "cost": 0.10548119821542389,
+        "deferred_share": 0.03505417463352454,
+        "accuracy": 0.9547482472912683
+      },
+      "with_fraud_alert": {
+        "t": 0.3,
+        "alert": 0.2,
+        "ratio": 20.0,
+        "cost": 0.09592096876991714,
+        "deferred_share": 0.009560229445506692,
+        "accuracy": 0.9572976418100702
+      },
+      "never_defer": {
+        "t": 0.0,
+        "alert": null,
+        "ratio": 20.0,
+        "cost": 0.10707456978967496,
+        "deferred_share": 0.0,
+        "accuracy": 0.9553855959209687
+      },
+      "a4_threshold_measured_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 20.0,
+        "cost": 0.12708731676226911,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9566602931803697
+      },
+      "perfect_llm": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 20.0,
+        "cost": 0.039770554493307776,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9834289356277884
+      },
+      "human_0.5": {
+        "t": 0.7,
+        "alert": null,
+        "ratio": 20.0,
+        "cost": 0.05481198215423837,
+        "deferred_share": 0.07520713830465264,
+        "accuracy": 0.9834289356277884
+      },
+      "human_1.0": {
+        "t": 0.55,
+        "alert": null,
+        "ratio": 20.0,
+        "cost": 0.09050350541746335,
+        "deferred_share": 0.03505417463352454,
+        "accuracy": 0.9700446144040791
+      }
+    }
+  },
+  "llm_failed_calls": 1,
+  "test": {
+    "per_class": {
+      "card_issues": {
+        "precision": 0.9663032705649157,
+        "recall": 0.975975975975976,
+        "f1": 0.9711155378486056,
+        "support": 999
+      },
+      "transfers_payments": {
+        "precision": 0.9696969696969697,
+        "recall": 0.9476082004555809,
+        "f1": 0.9585253456221198,
+        "support": 878
+      },
+      "account_access": {
+        "precision": 0.9789473684210527,
+        "recall": 0.9964285714285714,
+        "f1": 0.9876106194690265,
+        "support": 280
+      },
+      "fees_charges": {
+        "precision": 0.9714285714285714,
+        "recall": 0.951048951048951,
+        "f1": 0.9611307420494699,
+        "support": 429
+      },
+      "fraud_security": {
+        "precision": 0.9359605911330049,
+        "recall": 0.95,
+        "f1": 0.9429280397022333,
+        "support": 200
+      },
+      "loans_credit": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1": 0.9,
+        "support": 90
+      },
+      "disputes_refunds": {
+        "precision": 0.9390243902439024,
+        "recall": 0.9625,
+        "f1": 0.9506172839506173,
+        "support": 160
+      },
+      "other": {
+        "precision": 0.9401197604790419,
+        "recall": 0.98125,
+        "f1": 0.9602446483180428,
+        "support": 160
+      }
+    },
+    "macro_f1": 0.9540215271200144,
+    "accuracy": 0.9624530663329162,
+    "n": 3196,
+    "confusion": [
+      [
+        975,
+        10,
+        2,
+        3,
+        4,
+        2,
+        1,
+        2
+      ],
+      [
+        21,
+        832,
+        3,
+        4,
+        5,
+        3,
+        4,
+        6
+      ],
+      [
+        0,
+        0,
+        279,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        4,
+        6,
+        1,
+        408,
+        3,
+        4,
+        2,
+        1
+      ],
+      [
+        6,
+        2,
+        0,
+        1,
+        190,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        3,
+        0,
+        81,
+        2,
+        0
+      ],
+      [
+        2,
+        3,
+        0,
+        0,
+        1,
+        0,
+        154,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        157
+      ]
+    ],
+    "ci": {
+      "card_issues": {
+        "precision_ci": [
+          0.9546764442454098,
+          0.9780016450648056
+        ],
+        "recall_ci": [
+          0.9655778032036613,
+          0.9848794129470811
+        ]
+      },
+      "transfers_payments": {
+        "precision_ci": [
+          0.9581828790530966,
+          0.9805352798053528
+        ],
+        "recall_ci": [
+          0.9325530924726673,
+          0.9627221636408094
+        ]
+      },
+      "account_access": {
+        "precision_ci": [
+          0.9601328903654485,
+          0.9932885906040269
+        ],
+        "recall_ci": [
+          0.988635283442793,
+          1.0
+        ]
+      },
+      "fees_charges": {
+        "precision_ci": [
+          0.9554562945158659,
+          0.9869009872792861
+        ],
+        "recall_ci": [
+          0.9294695510445992,
+          0.970786926925285
+        ]
+      },
+      "fraud_security": {
+        "precision_ci": [
+          0.8981388888888889,
+          0.9684333242432506
+        ],
+        "recall_ci": [
+          0.9174463239382404,
+          0.9782608695652174
+        ]
+      },
+      "loans_credit": {
+        "precision_ci": [
+          0.8348241590214067,
+          0.957458006718925
+        ],
+        "recall_ci": [
+          0.8315789473684211,
+          0.960025974025974
+        ]
+      },
+      "disputes_refunds": {
+        "precision_ci": [
+          0.9017317350516441,
+          0.9745263242763847
+        ],
+        "recall_ci": [
+          0.9289620018535681,
+          0.9874213836477987
+        ]
+      },
+      "other": {
+        "precision_ci": [
+          0.9010879848628193,
+          0.9731543624161074
+        ],
+        "recall_ci": [
+          0.9572151504215741,
+          1.0
+        ]
+      }
+    }
+  },
+  "costs": {
+    "misroute": 1.0,
+    "fraud_fp": 2.0,
+    "defer": 0.3,
+    "ratios": [
+      2.0,
+      5.0,
+      10.0,
+      20.0
+    ]
+  }
+}

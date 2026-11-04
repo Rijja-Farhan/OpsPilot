@@ -27,6 +27,9 @@ OpsPilot: an operations agent. See `docs/domain.md` for the business context and
 - Classifier: `.venv/bin/python ml/train.py`, then `.venv/bin/python ml/compare_llm.py` (live)
 - Memory: `.venv/bin/python -m opspilot --show-memory C-17`, `--forget C-17`
 - Coworker: `.venv/bin/python -m opspilot "investigate T-1002"`, `--runs`, `--resume RUN_ID`; live tasks: `PYTHONPATH=. .venv/bin/python evals/run_a5.py`
+- Evals: `.venv/bin/python evals/run_a6.py --offline --label local`; live `PYTHONPATH=. .venv/bin/python evals/run_a6.py --label NAME`; `--rerun`, `--compare` (see README)
+- Classifier report: `.venv/bin/python ml/a6_classifier.py`; judge calibration: `.venv/bin/python evals/calibrate_judge.py run`; reward demo: `.venv/bin/python evals/reward.py`
+- Eval gold is written before a run; held-out case outputs are not read until the final report; the dev/held-out split (`evals/cases/SPLIT.sha256`) is fixed. Never tune on the classifier test set.
 - Plain `openai` SDK only; no LangChain-style frameworks.
 - The train/val/test split in `data/splits/` is fixed; never regenerate it, never tune on the test set.
 - Tools return data or the error contract `{error: {code, message, retryable}}`; never raise from a tool. Writes are gated in `opspilot/agent.py` (assistant) and denied in `opspilot/coworker.py` (coworker), not only in prompts.
