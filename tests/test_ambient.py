@@ -401,6 +401,27 @@ def test_webhook_accepts_dedupes_and_rejects_invalid(env):
     assert ("validate", "rejected") in steps(env[1])
 
 
+def test_status_and_decision_api_for_the_ui(env):
+    store, audit = env
+    client = TestClient(create_app(store, audit))
+    assert client.get("/events/EV-404").status_code == 404
+    run_events(env, [ev()])
+    s = client.get("/events/EV-1").json()
+    assert s["status"] == "done" and s["annotation"]["category"] == "card_issues"
+    assert {"admit", "set_category", "done"} <= {x["step"] for x in s["steps"]}
+    reply = next(a for a in s["approvals"] if a["kind"] == "send_reply")
+    refused = client.post(f"/approvals/{reply['id']}/reject", json={"by": "t", "reason": " "})
+    assert refused.status_code == 409 and "reason" in refused.json()["error"]["message"]
+    assert client.post(f"/approvals/{reply['id']}/approve", json={"by": "t"}).json()["status"] == "approved"
+    assert client.post(f"/approvals/{reply['id']}/approve", json={"by": "t"}).status_code == 409   # already decided
+    assert len(store.outbox()) == 1
+
+
+def test_ui_is_served_with_a_document_shell(env):
+    r = TestClient(create_app(*env)).get("/ui")
+    assert r.status_code == 200 and r.text.startswith("<!doctype html>") and "Simulate Incoming Ticket" in r.text
+
+
 # ---- streams ---------------------------------------------------------------------------------------------------------
 def test_streams_are_fixed_and_match_their_gold():
     d = ROOT / "data" / "stream"
