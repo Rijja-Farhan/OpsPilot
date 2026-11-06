@@ -29,6 +29,8 @@ OpsPilot: an operations agent. See `docs/domain.md` for the business context and
 - Coworker: `.venv/bin/python -m opspilot "investigate T-1002"`, `--runs`, `--resume RUN_ID`; live tasks: `PYTHONPATH=. .venv/bin/python evals/run_a5.py`
 - Evals: `.venv/bin/python evals/run_a6.py --offline --label local`; live `PYTHONPATH=. .venv/bin/python evals/run_a6.py --label NAME`; `--rerun`, `--compare` (see README)
 - Classifier report: `.venv/bin/python ml/a6_classifier.py`; judge calibration: `.venv/bin/python evals/calibrate_judge.py run`; reward demo: `.venv/bin/python evals/reward.py`
+- Ambient (A7): `.venv/bin/python -m opspilot.ambient replay data/stream/eval.jsonl --offline`; `approvals list`; `verify-audit`; eval `PYTHONPATH=. .venv/bin/python evals/run_a7.py --offline`; red team `PYTHONPATH=. .venv/bin/python evals/redteam_a7.py`; cost `python -m opspilot.ambient.cost A7_OFFLINE.json A7_LIVE.json`.
+- The A7 streams in `data/stream/` are fixed (checksums); never regenerate them or tune the detector's k on `eval.jsonl`. The ambient agent never sends or executes: replies wait for `approvals`, and unknown actions are denied in `opspilot/ambient/policy.py`.
 - Eval gold is written before a run; held-out case outputs are not read until the final report; the dev/held-out split (`evals/cases/SPLIT.sha256`) is fixed. Never tune on the classifier test set.
 - Plain `openai` SDK only; no LangChain-style frameworks.
 - The train/val/test split in `data/splits/` is fixed; never regenerate it, never tune on the test set.

@@ -76,3 +76,14 @@ Verified only on Groq (`openai/gpt-oss-120b`); the Gemini entry from A1 was not 
 | Judge | Rubric v1 was too lenient (70% agreement on the 10 items that did not error); I revised it after seeing the disagreements, so the 87% on the same 15 items is optimistic | Calibration table | Disclosed in `docs/a6-judge-calibration.md` |
 | `build_cases.py` | Imported A1 gold ("60", "v1") predates policy v3; the agent's "120 days, v2" is the right answer today | Reading the raw dev output of the one failing policy case | Gold corrected and logged in `docs/a6-eval.md` |
 | Shell | `pkill`/`xargs kill` matched my own shell twice | Exit 143/144 | Started servers with `setsid`, avoided pattern kills |
+
+## A7 (2026-11-04)
+| Where | Mistake | How found | Fix |
+|---|---|---|---|
+| `tools/gen/make_stream.py` | The burst templates let two burst tickets come from one customer inside the dedupe window, so two real burst tickets were linked as duplicates | First stream replay: two "false links" with role `burst` | Not regenerated (the stream is fixed once); reported as a measured false-link count |
+| Detector | My first calibration rule (smallest k that works) picked k = 2.0, below the usual range, because the calibration stream has only one burst | Reading the calibration table | Changed the rule, before reading eval results, to the middle of the working range (k = 3.0). I had already run the eval stream once at k = 2.5 and 3.0 in a smoke test and seen the decoy alert; I did not change any parameter after that |
+| `Store` | SQLite refused calls from the webhook test client's thread | `test_webhook_...` | `check_same_thread=False`; one writer, each statement autocommitted |
+| `redteam_a7.py` | The verdict labelled a real model's harmless draft "caught by policy" because it counted every refused action name, including unknown but harmless ones | Live red team: 11 of 11 "caught by policy" with no obeying reply | Only names in the denied set, or a rejected draft, count as policy catches; the live run now reports 11 `reached_human` |
+| Draft prompt | The real model proposed made-up action names, all refused by default deny and recorded as "denied" | Live injection run | Prompt lists the two names allowed |
+| Replay design | `drain` used `asyncio.run` per event, which cannot share one MCP client session | Reading the toolbox lifetime before running | `drain` is async and runs inside the caller's loop |
+| Shell | `pgrep -f "run_a7.py --live"` matched my own wait loop and reported "running" forever | Wait loop never ended | Check the output file instead |

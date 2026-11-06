@@ -71,6 +71,19 @@ python evals/reward.py                                                  # reward
 ```
 45 cases in `evals/cases/` (spec: `docs/spec-a6.md`), 14 held out. Results go to `evals/results/` (gitignored). Write-up: `docs/a6-eval.md`, `docs/a6-classifier.md`, `docs/a6-judge-calibration.md`, `docs/a6-reward-design.md`.
 
+
+## Ambient agent (A7)
+```bash
+python -m opspilot.ambient replay data/stream/eval.jsonl --offline      # whole pipeline, scripted model, no network
+python -m opspilot.ambient replay data/stream/eval.jsonl --offline --obedient   # the scripted model obeys every injection
+python -m opspilot.ambient approvals list|approve ID|edit ID --text "..."|reject ID --reason "..."
+python -m opspilot.ambient verify-audit
+PYTHONPATH=. python evals/run_a7.py --offline        # graded against data/stream/eval_gold.json; add --live --inprocess --limit 45 for a real model
+PYTHONPATH=. python evals/redteam_a7.py [--live]     # red team
+python -m opspilot.ambient serve                     # webhook on :8100 plus a worker (needs the mock API on :8000 and an LLM key)
+```
+Events enter by webhook, replay or schedule, go through a SQLite queue (dedupe, rate cap, back-pressure), a guard, the classifier tool (the LLM only for unsure tickets), a policy layer and a human approval queue. Nothing customer-facing is sent without approval; every step is in a hash-chained audit log (`runs/ambient/`). Design: `docs/spec-a7.md`, `docs/a7-policy.md`; results: `docs/a7-eval.md`, `docs/a7-cost.md`, `docs/a7-redteam.md`.
+
 ## Test and eval
 
 ```bash
